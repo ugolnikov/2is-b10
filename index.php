@@ -9,6 +9,7 @@
     
 </head>
 <body>
+    <?echo "Ну привет, ". $gethostbyaddr($_SERVER['REMOTE_ADDR']);?>
  <img src="/scale_1200.png" alt="">
 </body>
 </html>
