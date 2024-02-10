@@ -10,17 +10,7 @@
 </head>
 <body>
  <img src="/scale_1200.png" alt="">
- <script>
-    function GetComputerName() {
-    try {
-        var network = new ActiveXObject('WScript.Network');
-        // Show a pop up if it works
-        alert(network.computerName);
-    }
-    catch (e) { }
-    }
-
-    GetComputerName()
- </script>
+ <?echo gethostbyaddr($_SERVER['REMOTE_ADDR']);?>
 </body>
+<script src="/script.js" defer></script>
 </html>
