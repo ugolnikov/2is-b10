@@ -9,8 +9,9 @@
     
 </head>
 <body>
- <img src="/scale_1200.png" alt="">
- <?echo gethostbyaddr($_SERVER['REMOTE_ADDR']);?>
+
+<?echo gethostbyaddr($_SERVER['REMOTE_ADDR']);?>
+<img src="/scale_1200.png" alt="">
 </body>
 <script src="/script.js" defer></script>
 </html>
