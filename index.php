@@ -11,7 +11,8 @@
 </head>
 <body>
     <div class="wrapper">
-<img src="/scale_1200.png" alt="" class="freddy"></div>
+<img src="/scale_1200.png" alt="" class="freddy" galleryimg="no">
+    </div>
 </body>
 <script src="/script.js" defer></script>
 </html>
