@@ -19,6 +19,9 @@ img {
     align-items: center;
     align-self: center;
 }
+img:hover {
+    cursor: wait;
+}
 /* @keyframes spin { 
     100% { 
         transform:rotate(360deg); 
@@ -32,3 +35,4 @@ img:hover{
     left: 40%;
     cursor: wait;
 } */
+
