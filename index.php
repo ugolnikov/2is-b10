@@ -13,8 +13,8 @@
     <div class="wrapper">
 <img src="/scale_1200.png" alt="" class="freddy" galleryimg="no">
     </div>
-    <a href="dashboard.php">
-        <div class="btn">-></div>
+    <a href="dashboard.php" class="btn">
+        ->
     </a>
 </body>
 <script src="/script.js" defer></script>
