@@ -14,5 +14,8 @@
      <a href="math.php">
       Math Bombs
     </a>
+    <a href="void.php">
+      Void
+    </a>
   </body>
 </html>
