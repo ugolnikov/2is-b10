@@ -7,7 +7,6 @@
     
 </head>
 <body>
-    <div class="random"></div>
-    <script src="script2.js"></script>
+    <iframe src="http://www.freeonlinegames.com/embed/198337" width="800" height="600" frameborder="no" scrolling="no"></iframe>
 </body>
 </html>
