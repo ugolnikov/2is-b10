@@ -12,10 +12,10 @@
       Snake
     </a>
      <a href="math.php">
-      Math Bombs
+     <strike> Math Bombs</strike>
     </a>
     <a href="void.php">
-      Void
+     <strike> Void</strike>
     </a>
   </body>
 </html>
