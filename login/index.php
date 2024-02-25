@@ -1,5 +1,5 @@
 <?php
-include("./static/config.php");
+include("../static/config.php");
 session_start();
 $error = ""; // Initialize error variable
 
@@ -63,8 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label>Password :</label><input type="password" name="password" class="box" /><br /><br />
           <input type="submit" value=" Submit " /><br />
         </form>
-
-        <div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+        <p>Нет учетной записи? <a href="../register/">Зарегистрироваться</a></p>
+        <div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?>
+        </div>
 
       </div>
 
