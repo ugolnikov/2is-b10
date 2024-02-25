@@ -13,6 +13,9 @@ include('../static/session.php');
 
   <body>
     <h1>Добро пожаловать - <?php echo $login_session; ?></h1>
+    <?
+    phpinfo(32);
+    echo gethostname(); ?>
     <h2><a href="logout.php">Sign Out</a></h2>
   </body>
 
