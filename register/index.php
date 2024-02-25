@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $check_stmt->store_result();
 
     if ($check_stmt->num_rows > 0) {
-      $error = "Username already exists. Please choose another username.";
+      $error = "Пользователь уже существует, используйте другие данные.";
     } else {
       $insert_query = "INSERT INTO admin (username, passcode) VALUES (?, ?)";
       $insert_stmt = $db->prepare($insert_query);
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['login_user'] = $myusername;
         header("location: ../dashboard");
       } else {
-        $error = "Registration failed. Please try again later.";
+        $error = "При регистрации произошла ошибка.";
       }
     }
   } else {
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['login_user'] = $myusername;
       header("location: ../dashboard");
     } else {
-      $error = "Your Login Name or Password is invalid";
+      $error = "Имя пользователя или пароль неверны";
     }
   }
 }
@@ -64,18 +64,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <div>
     <div>
-      <div><b>Registration</b></div>
+      <div><b>Регистрация</b></div>
 
       <div>
 
         <form action="" method="post">
-          <label>UserName :</label><input type="text" name="username" /><br /><br />
-          <label>Password :</label><input type="password" name="password" /><br /><br />
+          <label>Имя пользователя :</label><input type="text" name="username" /><br /><br />
+          <label>Пароль :</label><input type="password" name="password" /><br /><br />
           <input type="submit" name="register" value=" Register " /><br />
         </form>
-        <p>Уже есть учетная запись? <a href="../login/">Войти</a></p>
         <div><?php echo $error; ?></div>
-
+        <p>Уже есть учетная запись? <a href="../login/">Войти</a></p>
+        <p><a href="../">Назад</a></p>
       </div>
 
     </div>

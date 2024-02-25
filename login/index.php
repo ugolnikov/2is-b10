@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['login_user'] = $myusername;
     header("location: ../dashboard");
   } else {
-    $error = "Your Login Name or Password is invalid";
+    $error = "Имя пользователя или пароль не подходят!";
   }
 }
 ?>
@@ -40,18 +40,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <div>
     <div>
-      <div><b>Login</b></div>
+      <div><b>Авторизация</b></div>
 
       <div>
 
         <form action="" method="post">
-          <label>UserName :</label><input type="text" name="username" /><br /><br />
-          <label>Password :</label><input type="password" name="password" /><br /><br />
+          <label>Имя пользователя :</label><input type="text" name="username" /><br /><br />
+          <label>Пароль :</label><input type="password" name="password" /><br /><br />
           <input type="submit" value=" Submit " /><br />
         </form>
+        <div><?php echo $error; ?></div>
         <p>Нет учетной записи? <a href="../register/">Зарегистрироваться</a></p>
-        <div><?php echo $error; ?>
-        </div>
+        <p><a href="../">Назад</a></p>
+
 
       </div>
 
