@@ -1,4 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СТАРТ | Авторизация</title>
+  <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
 <?php
+error_reporting(E_ERROR | E_PARSE);
 include("../static/config.php");
 session_start();
 $error = "";
@@ -50,37 +61,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-<html>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>СТАРТ | Регистрация</title>
-  <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
-  <link rel="stylesheet" href="../css/style.css">
-</head>
+
+
 
 <body>
 
-  <div>
-    <div>
-      <div><b>Регистрация</b></div>
+  <div class="form">
+    <div class="border">
+      <h2>Регистрация</h2>
 
       <div>
-
         <form action="" method="post">
-          <label>Имя пользователя :</label><input type="text" name="username" /><br /><br />
-          <label>Пароль :</label><input type="password" name="password" /><br /><br />
-          <input type="submit" name="register" value=" Register " /><br />
+          <input style="font-size: 1.2rem;" type="text" name="username" placeholder="Имя пользователя" /><br /><br />
+          <input style="font-size: 1.2rem;" type="password" name="password" placeholder="Пароль" /><br /><br />
+          <input style="font-size: 1.2rem; width: 90%;" type="submit" value=" Зарегистрироваться " class="submit" /><br />
         </form>
         <div><?php echo $error; ?></div>
-        <p>Уже есть учетная запись? <a href="../login/">Войти</a></p>
-        <p><a href="../">Назад</a></p>
+        <p>Уже зарегистрированы? <a href="../login">Войти</a></p>
+        <p><a href="../login">Назад</a></p>
       </div>
 
     </div>
-
   </div>
+  <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
 
 </body>
 
