@@ -15,6 +15,20 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server-dir: web/${{ secrets.ftp_username }}.12is.ru/public_html/
-        server: "31.129.99.31"
+        server: ${{ secrets.ftp_server }}
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
+        exclude: .git*
+            - .git*/**
+            - node_modules/**
+            - node_modules/**/*
+            - .github/**
+            - package-lock.json
+            - .gitignore
+            - .git-ftp-ignore
+            - webpack.config.js
+            - README.md
+            - .babelrc
+            - package.json
+            - package-lock.json
+            - postcss.config.js
