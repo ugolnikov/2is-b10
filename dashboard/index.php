@@ -13,9 +13,6 @@ include('../static/session.php');
 
   <body>
     <h1>Добро пожаловать - <?php echo $login_session; ?></h1>
-    <?
-    $_SERVER['HTTP_CF_CONNECTING_IP'];
-    echo gethostname(); ?>
     <h2><a href="logout.php">Sign Out</a></h2>
   </body>
 

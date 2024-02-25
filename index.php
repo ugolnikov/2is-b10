@@ -17,7 +17,7 @@
       <li><a href="/about">О нас</a></li>
       <li><a href="/news">Новости</a></li>
       <li><a href="/contacts">Контакты</a></li>
-      <li><a href="/login">Личный кабинет</a></li>
+      <li><a href="/dashboard">Личный кабинет</a></li>
     </ul>
   </div>
 
