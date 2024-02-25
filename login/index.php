@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // If result matched $myusername and $mypassword, table row must be 1 row
   if ($count == 1) {
     $_SESSION['login_user'] = $myusername;
-    header("location: ./dashboard");
+    header("location: ../dashboard");
   } else {
     $error = "Your Login Name or Password is invalid";
   }
