@@ -14,8 +14,8 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server-dir: /web/2is-b10.12is.ru/public_html/
+        server-dir: web/${{ secrets.ftp_username }}.12is.ru/public_html/
         server: "31.129.99.31"
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        state-name: /web/2is-b10.12is.ru/.sync-state.json
+        state-name: web/${{ secrets.ftp_username }}.12is.ru/.sync-state.json
