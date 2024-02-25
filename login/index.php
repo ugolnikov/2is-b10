@@ -29,42 +29,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
-  <title>Login Page</title>
-
-  <style type="text/css">
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-    }
-
-    label {
-      font-weight: bold;
-      width: 100px;
-      font-size: 14px;
-    }
-
-    .box {
-      border: #666666 solid 1px;
-    }
-  </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СТАРТ | Авторизация</title>
+  <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body bgcolor="#FFFFFF">
+<body>
 
-  <div align="center">
-    <div style="width:300px; border: solid 1px #333333; " align="left">
-      <div style="background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
+  <div>
+    <div>
+      <div><b>Login</b></div>
 
-      <div style="margin:30px">
+      <div>
 
         <form action="" method="post">
-          <label>UserName :</label><input type="text" name="username" class="box" /><br /><br />
-          <label>Password :</label><input type="password" name="password" class="box" /><br /><br />
+          <label>UserName :</label><input type="text" name="username" /><br /><br />
+          <label>Password :</label><input type="password" name="password" /><br /><br />
           <input type="submit" value=" Submit " /><br />
         </form>
         <p>Нет учетной записи? <a href="../register/">Зарегистрироваться</a></p>
-        <div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?>
+        <div><?php echo $error; ?>
         </div>
 
       </div>

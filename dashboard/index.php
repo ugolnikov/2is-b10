@@ -4,7 +4,11 @@ include('../static/session.php');
 <html">
 
   <head>
-    <title>Welcome </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СТАРТ | Личный кабинет</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
   </head>
 
   <body>
