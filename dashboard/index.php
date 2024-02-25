@@ -1,5 +1,5 @@
 <?php
-include('session.php');
+include('../static/session.php');
 ?>
 <html">
 
