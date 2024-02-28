@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Registration process
         $myusername = mysqli_real_escape_string($db, $_POST['username']);
         $mypassword = mysqli_real_escape_string($db, $_POST['password']);
+        echo $myusername, $mypassword;
 
         // Check if the username already exists
         $check_query = "SELECT id FROM admin WHERE username = ?";
