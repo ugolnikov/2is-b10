@@ -61,10 +61,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>СТАРТ | Регистрация</title>
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+    /* Стили для прелоадера */
+    .preloader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      /* Пропускать события указателя мыши через элемент */
+    }
+
+    /* Скрытие прелоадера при выделении текста */
+    ::selection {
+      background-color: transparent;
+      /* Сделать выделенный текст прозрачным */
+    }
+
+    .preloader .loader {
+      border: 8px solid #f3f3f3;
+      /* Цвет кружка */
+      border-top: 8px solid #3498db;
+      /* Цвет кружка при загрузке */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      /* Анимация кручения */
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Скрыть прелоадер после загрузки страницы */
+    .loaded .preloader {
+      opacity: 0;
+    }
+  </style>
 </head>
 
 <body>
-
+<div class="preloader">
+    <div class="loader"></div>
+  </div>
     <div class="form">
         <div class="border">
             <h2>Регистрация</h2>
