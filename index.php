@@ -138,7 +138,10 @@
           <path fill="currentColor" d="M13 6h10v2H13z" class="clr-i-outline clr-i-outline-path-16" />
           <path fill="none" d="M0 0h36v36H0z" />
         </svg>
-        <h2>
+        <h2 style="
+    margin-bottom: 48px;
+    margin-top: 25px;
+">
           Гибкий график занятий.
         </h2>
         <p>
