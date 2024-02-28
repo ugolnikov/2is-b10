@@ -18,10 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($check_stmt->num_rows > 0) {
             $error = "Username already exists. Please choose another username.";
         } else {
-            $hashed_password = password_hash($mypassword, PASSWORD_DEFAULT);
             $insert_query = "INSERT INTO admin (username, passcode) VALUES (?, ?)";
             $insert_stmt = $db->prepare($insert_query);
-            $insert_stmt->bind_param("ss", $myusername, $hashed_password);
+            $insert_stmt->bind_param("ss", $myusername, $mypassword);
             if ($insert_stmt->execute()) {
                 $_SESSION['login_user'] = $myusername;
                 header("location: ../dashboard");
@@ -42,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_result($user_id, $stored_password);
         $stmt->fetch();
 
-        if ($stmt->num_rows == 1 && password_verify($mypassword, $stored_password)) {
+        if ($stmt->num_rows == 1 && $mypassword == $stored_password) {
             $_SESSION['login_user'] = $myusername;
             header("location: ../dashboard");
             exit();
