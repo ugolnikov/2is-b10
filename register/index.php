@@ -138,7 +138,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
     <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
+    <script>
+        // Скрипт для скрытия лоадера после загрузки видео
+        const video = document.getElementById('bgVideo');
 
+        // Скрыть лоадер при загрузке видео
+        video.addEventListener('loadeddata', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 
 </html>
