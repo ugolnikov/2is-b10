@@ -8,6 +8,7 @@
   <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
   <link rel="stylesheet" href="../css/style.css">
   <style>
+    /* Стили для прелоадера */
     .preloader {
       position: fixed;
       left: 0;
@@ -22,19 +23,25 @@
       opacity: 1;
       transition: opacity 0.3s ease;
       pointer-events: none;
+      /* Пропускать события указателя мыши через элемент */
     }
 
+    /* Скрытие прелоадера при выделении текста */
     ::selection {
       background-color: transparent;
+      /* Сделать выделенный текст прозрачным */
     }
 
     .preloader .loader {
       border: 8px solid #f3f3f3;
+      /* Цвет кружка */
       border-top: 8px solid #3498db;
+      /* Цвет кружка при загрузке */
       border-radius: 50%;
       width: 50px;
       height: 50px;
       animation: spin 1s linear infinite;
+      /* Анимация кручения */
     }
 
     @keyframes spin {
@@ -47,6 +54,7 @@
       }
     }
 
+    /* Скрыть прелоадер после загрузки страницы */
     .loaded .preloader {
       opacity: 0;
     }
@@ -57,40 +65,24 @@
 error_reporting(E_ERROR | E_PARSE);
 include("../static/config.php");
 session_start();
-$error = "";
+$error = ""; // Initialize error variable
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+  // username and password sent from form 
 
   $myusername = mysqli_real_escape_string($db, $_POST['username']);
   $mypassword = mysqli_real_escape_string($db, $_POST['password']);
 
-  $sql_user = "SELECT id FROM users WHERE username = ? and passcode = ?";
-  $stmt_user = $db->prepare($sql_user);
-  $stmt_user->bind_param("ss", $myusername, $mypassword);
-  $stmt_user->execute();
-  $stmt_user->store_result();
+  $sql = "SELECT id FROM admin WHERE username = ? and passcode = ?";
+  $stmt = $db->prepare($sql);
+  $stmt->bind_param("ss", $myusername, $mypassword);
+  $stmt->execute();
+  $stmt->store_result();
 
-  $count_user = $stmt_user->num_rows;
+  $count = $stmt->num_rows;
 
-
-  if ($count_user == 0) {
-    $sql_admin = "SELECT id FROM admin WHERE username = ? and passcode = ?";
-    $stmt_admin = $db->prepare($sql_admin);
-    $stmt_admin->bind_param("ss", $myusername, $mypassword);
-    $stmt_admin->execute();
-    $stmt_admin->store_result();
-
-    $count_admin = $stmt_admin->num_rows;
-
-    if ($count_admin == 1) {
-      $_SESSION['login_user'] = $myusername;
-      header("location: ../admin_dashboard");
-      exit();
-    }
-  }
-
-  if ($count_user == 1) {
+  // If result matched $myusername and $mypassword, table row must be 1 row
+  if ($count == 1) {
     $_SESSION['login_user'] = $myusername;
     header("location: ../dashboard");
   } else {
