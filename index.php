@@ -228,7 +228,7 @@
 
     <div class="popup__bg">
         <form class="popup">
-            <img src="/static/close.svg" class="close-popup">
+            <img src="/static/close.svg" class="close-popup" alt="close">
             <label>
                 <input type="text" name="name">
                 <div class="label__text">
