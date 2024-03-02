@@ -50,12 +50,12 @@ a:any-link {
 
 .header {
   height: 120px;
-  background-color: #ecf4f7;
+  background-color: #d9f5ff;
 }
 
 .logo {
   height: 120px;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 /* header */
@@ -77,15 +77,15 @@ a:any-link {
 .header ul li a {
   margin: 0 2rem;
   font-size: 1.2rem;
-  padding: 1rem;
+  padding: 3rem;
   transition: all 0.3s ease;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .header ul li a:hover {
   background-color: #193441;
   color: #ecf4f7;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .main-board {
@@ -117,9 +117,13 @@ a:any-link {
   object-fit: cover;
 }
 
+.about-board {
+  margin-bottom: 2rem;
+}
+
 .about-board h1 {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .blocks {
@@ -128,7 +132,7 @@ a:any-link {
   vertical-align: middle;
   text-align: center;
   justify-content: space-evenly;
-
+  /* background-color: #ccf1ff; */
 }
 
 .block {
@@ -138,8 +142,8 @@ a:any-link {
 }
 
 .board-icon {
-  height: 70px;
-  width: 70px;
+  height: 110px;
+  width: 110px;
   color: #193441;
 }
 
