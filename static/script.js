@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	let popup = document.querySelector('.popup')
 	let openPopupButton = document.querySelector('.open-popup')
 	let closePopupButton = document.querySelector('.close-popup')
-	console.log(openPopupButton)
 	openPopupButton.addEventListener('click', e => {
 		e.preventDefault()
 		popupBg.classList.add('active')

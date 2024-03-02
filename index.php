@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         /* Стили для прелоадера */
         .preloader {
@@ -68,7 +69,7 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Заголовок -->
+    <!-- Header -->
     <div class="header">
         <a href="/"><img src="../static/logo.png" alt="Logo" class="logo"></a>
         <ul>
@@ -92,7 +93,7 @@
             </svg></a>
     </div>
     <!-- Основной контент -->
-    <div class="main-board">
+    <div class="main-board mb-10">
         <p class="main-img-text">Мы "СТАРТ" и мы гордимся этим!</p>
         <script>
             document.querySelector(".main-img-text").addEventListener('click', () => {
@@ -157,6 +158,48 @@
                     Возможность выбора удобного расписания занятий для различных возрастов и занятых родителей.
                 </p>
             </div>
+        </div>
+    </div>
+
+
+    <!-- Карусель -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="/static/photo (1).avif" alt="photo 1">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="/static/photo (2).avif" alt="photo 2">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="/static/photo (3).avif" alt="photo 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущее</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующее</span>
+        </button>
+    </div>
+
+
+    <div class="where-is-me">
+        <div class="contacts">
+            <h3>О нас</h3>
+            <p>Уровень образования: дополнительное</p>
+            <p>Время занятий: выборочное</p>
+            <p>Возраста: от 5 до 18 лет</p>
+            <h3>Контакты</h3>
+            <p>Адрес: г.Пермь, ул. Пушкина, дом 107а</p>
+            <p>Телефон: +7 (342) 244-89-21</p>
+            <p>Время работы: С 9:00 до 17:00</p>
+        </div>
+        <div class="map">
+            <h3>Мы на карте</h3>
+            <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/oniks/1064300558/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Оникс</a><a href="https://yandex.ru/maps/50/perm/category/college/184106236/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Колледж в Перми</a><a href="https://yandex.ru/maps/50/perm/category/further_education/184106162/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Дополнительное образование в Перми</a><iframe src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=56.221789%2C58.002929&mode=search&oid=1064300558&ol=biz&z=18.2" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
         </div>
     </div>
 

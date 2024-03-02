@@ -26,8 +26,8 @@ li {
 }
 
 .cart-icon {
-  height: 90px;
-  width: 90px;
+  height: 4rem;
+  width: 4rem;
   margin-right: 50px;
   padding: 1rem;
   color: #193441;
@@ -73,10 +73,17 @@ a:any-link {
   align-items: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  text-wrap: nowrap;
+}
+
+.header ul {
+  height: 100%;
+  margin-top: -1px;
 }
 
 .btn-header {
-  margin: 0 2rem;
+  margin: 0 1rem;
+  height: 100%;
   font-size: 1.2rem;
   padding: 3rem;
   transition: all 0.3s ease;
@@ -87,7 +94,7 @@ a:any-link {
 
 .btn-header:hover {
   background-color: #193441;
-  color: #ecf4f7;
+  color: #ecf4f7 !important;
   /* border-radius: 10px; */
 }
 
@@ -131,7 +138,7 @@ body>div.header>ul>li:nth-child(1)>div {
 
 .about-board h1 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 3rem;
 }
 
 .blocks {
@@ -263,6 +270,11 @@ body>div>div>div>p:nth-child(3)>a {
   height: 70px;
   width: 70px;
   cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.links svg:hover {
+  color: #0065bd;
 }
 
 .open-popup {
@@ -271,6 +283,14 @@ body>div>div>div>p:nth-child(3)>a {
   padding: 1.5rem;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.open-popup:hover {
+  background-color: #193441;
+  color: #ecf4f7 !important;
+  outline: 1px solid #ecf4f7;
+
 }
 
 /* popup */
@@ -394,8 +414,8 @@ body>div>div>div>p:nth-child(3)>a {
   min-width: 153px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  margin-top: 46px;
-  margin-left: 32px;
+  margin-top: 3rem;
+  margin-left: 1rem;
 }
 
 .dropdown-content a {
@@ -420,4 +440,89 @@ body>div>div>div>p:nth-child(3)>a {
 .header ul li .dropdown a:visited {
   color: black;
   text-decoration: none;
+}
+
+.carousel {
+  width: 60%;
+  height: 42vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-item {
+  width: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+
+
+.where-is-me {
+
+  border: 1px solid rgb(182, 182, 182);
+  padding: 1.5rem;
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  margin: 2rem auto;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10%;
+  border-radius: 10px;
+}
+
+
+.contacts {
+  text-align: start;
+  align-items: normal;
+}
+
+.contacts h3 {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.contacts h3:first-child {
+  margin: 0 0 2rem 0;
+}
+
+
+.lk {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  height: 70%;
+  width: 100%;
+}
+
+.left-bar {
+  width: 17%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-right: 1px solid black;
+}
+
+.right-bar {
+  width: 83%;
+  display: flex;
+  flex-direction: column;
 }
