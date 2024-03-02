@@ -100,7 +100,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
   <div class="form">
     <div class="border">
-      <h2>Авторизация</h2>
+      <h2 style="
+      margin-top: 0;
+      margin-bottom: 3rem;
+      ">Авторизация</h2>
 
       <div>
         <form action="" method="post">
@@ -110,7 +113,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
         <div><?php echo $error; ?></div>
         <p>Нет учетной записи? <a href="../register">Зарегистрироваться</a></p>
-        <p><a href="../">Назад</a></p>
+        <p style="
+        margin-bottom: 0;
+        padding: 0.5rem;
+        border: 1px solid;
+        color: black;
+        width: 25%;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #193441;
+        color: #ecf4f7;
+        "><a href="../">Назад</a></p>
       </div>
 
     </div>
