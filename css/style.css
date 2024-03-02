@@ -75,6 +75,13 @@ a:any-link {
   cursor: pointer;
 }
 
+.btn-header:visited,
+.btn-header:active,
+.btn-header:any-link {
+  color: currentColor;
+  text-decoration: none;
+}
+
 .btn-header {
   margin: 0 2rem;
   font-size: 1.2rem;

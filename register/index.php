@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($check_stmt->num_rows > 0) {
       $error = "Пользователя уже существует.";
     } else {
-      $insert_query = "INSERT INTO admin (username, passcode) VALUES (?, ?)";
+      $insert_query = "INSERT INTO users (username, passcode) VALUES (?, ?)";
       $insert_stmt = $db->prepare($insert_query);
       $insert_stmt->bind_param("ss", $myusername, $mypassword);
       if ($insert_stmt->execute()) {
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       header("location: ../dashboard");
       exit();
     } else {
-      $error = "Your Login Name or Password is invalid";
+      $error = "Имя пользователя или пароль не подходят!";
     }
   }
 }

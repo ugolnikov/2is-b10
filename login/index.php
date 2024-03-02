@@ -73,16 +73,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $myusername = mysqli_real_escape_string($db, $_POST['username']);
   $mypassword = mysqli_real_escape_string($db, $_POST['password']);
 
-  $sql = "SELECT id FROM admin WHERE username = ? and passcode = ?";
-  $stmt = $db->prepare($sql);
-  $stmt->bind_param("ss", $myusername, $mypassword);
-  $stmt->execute();
-  $stmt->store_result();
+  $sql_user = "SELECT id FROM users WHERE username = ? and passcode = ?";
+  $stmt_user = $db->prepare($sql_user);
+  $stmt_user->bind_param("ss", $myusername, $mypassword);
+  $stmt_user->execute();
+  $stmt_user->store_result();
 
-  $count = $stmt->num_rows;
+  if ($stmt_user->error) {
+    die('Ошибка выполнения запроса: ' . $stmt_user->error);
+  }
 
-  // If result matched $myusername and $mypassword, table row must be 1 row
-  if ($count == 1) {
+  $count_user = $stmt_user->num_rows;
+
+  // Check admin table if user not found in users table
+  if ($count_user == 0) {
+    $sql_admin = "SELECT id FROM admin WHERE username = ? and passcode = ?";
+    $stmt_admin = $db->prepare($sql_admin);
+    $stmt_admin->bind_param("ss", $myusername, $mypassword);
+    $stmt_admin->execute();
+    $stmt_admin->store_result();
+
+    if ($stmt_admin->error) {
+      die('Ошибка выполнения запроса: ' . $stmt_admin->error);
+    }
+
+    $count_admin = $stmt_admin->num_rows;
+
+    if ($count_admin == 1) {
+      $_SESSION['login_user'] = $myusername;
+      header("location: ../admin_dashboard");
+      exit(); // Exit to prevent further execution
+    }
+  }
+
+  // If result matched $myusername and $mypassword in users table, table row must be 1 row
+  if ($count_user == 1) {
     $_SESSION['login_user'] = $myusername;
     header("location: ../dashboard");
   } else {
