@@ -44,8 +44,8 @@ a,
 a:visited,
 a:active,
 a:any-link {
-  color: currentColor;
-  text-decoration: none;
+  color: currentColor !important;
+  text-decoration: none !important;
 }
 
 .header {
@@ -73,13 +73,6 @@ a:any-link {
   align-items: center;
   transition: all 0.3s ease;
   cursor: pointer;
-}
-
-.btn-header:visited,
-.btn-header:active,
-.btn-header:any-link {
-  color: currentColor !important;
-  text-decoration: none !important;
 }
 
 .btn-header {
