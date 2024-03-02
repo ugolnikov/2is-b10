@@ -40,11 +40,12 @@ li {
   color: #ecf4f7;
 }
 
+a,
 a:visited,
 a:active,
 a:any-link {
-  color: currentColor !important;
-  text-decoration: none !important;
+  color: currentColor;
+  text-decoration: none;
 }
 
 .header {
@@ -410,4 +411,13 @@ body>div>div>div>p:nth-child(3)>a {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+
+.header ul li .dropdown a,
+.header ul li .dropdown a:active,
+.header ul li .dropdown a:any-link,
+.header ul li .dropdown a:visited {
+  color: black;
+  text-decoration: none;
 }
