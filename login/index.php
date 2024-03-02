@@ -8,7 +8,6 @@
   <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* Стили для прелоадера */
     .preloader {
       position: fixed;
       left: 0;
@@ -23,25 +22,19 @@
       opacity: 1;
       transition: opacity 0.3s ease;
       pointer-events: none;
-      /* Пропускать события указателя мыши через элемент */
     }
 
-    /* Скрытие прелоадера при выделении текста */
     ::selection {
       background-color: transparent;
-      /* Сделать выделенный текст прозрачным */
     }
 
     .preloader .loader {
       border: 8px solid #f3f3f3;
-      /* Цвет кружка */
       border-top: 8px solid #3498db;
-      /* Цвет кружка при загрузке */
       border-radius: 50%;
       width: 50px;
       height: 50px;
       animation: spin 1s linear infinite;
-      /* Анимация кручения */
     }
 
     @keyframes spin {
@@ -54,7 +47,6 @@
       }
     }
 
-    /* Скрыть прелоадер после загрузки страницы */
     .loaded .preloader {
       opacity: 0;
     }
@@ -65,24 +57,40 @@
 error_reporting(E_ERROR | E_PARSE);
 include("../static/config.php");
 session_start();
-$error = ""; // Initialize error variable
+$error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // username and password sent from form 
+
 
   $myusername = mysqli_real_escape_string($db, $_POST['username']);
   $mypassword = mysqli_real_escape_string($db, $_POST['password']);
 
-  $sql = "SELECT id FROM admin WHERE username = ? and passcode = ?";
-  $stmt = $db->prepare($sql);
-  $stmt->bind_param("ss", $myusername, $mypassword);
-  $stmt->execute();
-  $stmt->store_result();
+  $sql_user = "SELECT id FROM users WHERE username = ? and passcode = ?";
+  $stmt_user = $db->prepare($sql_user);
+  $stmt_user->bind_param("ss", $myusername, $mypassword);
+  $stmt_user->execute();
+  $stmt_user->store_result();
 
-  $count = $stmt->num_rows;
+  $count_user = $stmt_user->num_rows;
 
-  // If result matched $myusername and $mypassword, table row must be 1 row
-  if ($count == 1) {
+
+  if ($count_user == 0) {
+    $sql_admin = "SELECT id FROM admin WHERE username = ? and passcode = ?";
+    $stmt_admin = $db->prepare($sql_admin);
+    $stmt_admin->bind_param("ss", $myusername, $mypassword);
+    $stmt_admin->execute();
+    $stmt_admin->store_result();
+
+    $count_admin = $stmt_admin->num_rows;
+
+    if ($count_admin == 1) {
+      $_SESSION['login_user'] = $myusername;
+      header("location: ../admin_dashboard");
+      exit();
+    }
+  }
+
+  if ($count_user == 1) {
     $_SESSION['login_user'] = $myusername;
     header("location: ../dashboard");
   } else {
@@ -95,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <body style="background-image: url('../static/water.mp4');">
-<div class="preloader">
+  <div class="preloader">
     <div class="loader"></div>
   </div>
   <div class="form">
@@ -131,14 +139,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
   <script>
-        // Скрипт для скрытия лоадера после загрузки видео
-        const video = document.getElementById('bgVideo');
+    // Скрипт для скрытия лоадера после загрузки видео
+    const video = document.getElementById('bgVideo');
 
-        // Скрыть лоадер при загрузке видео
-        video.addEventListener('loadeddata', function() {
-            document.body.classList.add('loaded');
-        });
-    </script>
+    // Скрыть лоадер при загрузке видео
+    video.addEventListener('loadeddata', function() {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </body>
 
 </html>

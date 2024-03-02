@@ -72,17 +72,20 @@ a:any-link {
   justify-content: space-evenly;
   align-items: center;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.header ul li a {
+.btn-header {
   margin: 0 2rem;
   font-size: 1.2rem;
   padding: 3rem;
   transition: all 0.3s ease;
+  border: none;
+  background: none;
   /* border-radius: 10px; */
 }
 
-.header ul li a:hover {
+.btn-header:hover {
   background-color: #193441;
   color: #ecf4f7;
   /* border-radius: 10px; */
@@ -377,4 +380,30 @@ body>div>div>div>p:nth-child(3)>a {
   background: #fff;
   color: #193441;
   transition: 0.5s all;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 153px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 46px;
+  margin-left: 32px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
