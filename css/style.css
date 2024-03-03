@@ -98,11 +98,6 @@ a:any-link {
   /* border-radius: 10px; */
 }
 
-
-body>div.header>ul>li:nth-child(1)>div {
-  margin-top: -6px;
-}
-
 .main-board {
   display: flex;
   width: 100%;

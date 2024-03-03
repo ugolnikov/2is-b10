@@ -65,10 +65,9 @@
 error_reporting(E_ERROR | E_PARSE);
 include("../static/config.php");
 session_start();
-$error = ""; // Initialize error variable
+$error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // username and password sent from form 
 
   $myusername = mysqli_real_escape_string($db, $_POST['username']);
   $mypassword = mysqli_real_escape_string($db, $_POST['password']);
@@ -85,7 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $count_user = $stmt_user->num_rows;
 
-  // Check admin table if user not found in users table
   if ($count_user == 0) {
     $sql_admin = "SELECT id FROM admin WHERE username = ? and passcode = ?";
     $stmt_admin = $db->prepare($sql_admin);
@@ -102,11 +100,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($count_admin == 1) {
       $_SESSION['login_user'] = $myusername;
       header("location: ../admin_dashboard");
-      exit(); // Exit to prevent further execution
+      exit();
     }
   }
 
-  // If result matched $myusername and $mypassword in users table, table row must be 1 row
   if ($count_user == 1) {
     $_SESSION['login_user'] = $myusername;
     header("location: ../dashboard");
@@ -156,10 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
   <script>
-    // Скрипт для скрытия лоадера после загрузки видео
     const video = document.getElementById('bgVideo');
-
-    // Скрыть лоадер при загрузке видео
     video.addEventListener('loadeddata', function() {
       document.body.classList.add('loaded');
     });

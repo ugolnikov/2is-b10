@@ -77,25 +77,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       opacity: 1;
       transition: opacity 0.3s ease;
       pointer-events: none;
-      /* Пропускать события указателя мыши через элемент */
     }
 
-    /* Скрытие прелоадера при выделении текста */
     ::selection {
       background-color: transparent;
-      /* Сделать выделенный текст прозрачным */
     }
 
     .preloader .loader {
       border: 8px solid #f3f3f3;
-      /* Цвет кружка */
       border-top: 8px solid #3498db;
-      /* Цвет кружка при загрузке */
       border-radius: 50%;
       width: 50px;
       height: 50px;
       animation: spin 1s linear infinite;
-      /* Анимация кручения */
     }
 
     @keyframes spin {
@@ -108,7 +102,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
 
-    /* Скрыть прелоадер после загрузки страницы */
     .loaded .preloader {
       opacity: 0;
     }
@@ -152,10 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
   <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
   <script>
-    // Скрипт для скрытия лоадера после загрузки видео
     const video = document.getElementById('bgVideo');
-
-    // Скрыть лоадер при загрузке видео
     video.addEventListener('loadeddata', function() {
       document.body.classList.add('loaded');
     });

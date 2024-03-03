@@ -253,11 +253,10 @@
 
 
     <script>
-        // После загрузки страницы скрыть прелоадер с небольшой задержкой
         window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.body.classList.add('loaded');
-            }, 500); // Задержка в миллисекундах (здесь 1000 мс = 1 секунда)
+            // setTimeout(function() {
+            document.body.classList.add('loaded');
+            // }, 500); 
         });
     </script>
 
