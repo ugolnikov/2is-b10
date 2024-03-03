@@ -72,6 +72,7 @@
                 header("Refresh:0");
             }
             ?>
+
             <?
             error_reporting(E_ERROR | E_PARSE);
             $query = "SELECT * FROM news ORDER BY date_added DESC";
@@ -82,7 +83,7 @@
                     echo "<div class='news-block'>";
                     echo "<h2>" . $row['title'] . "</h2>";
                     echo "<p>" . $row['content'] . "</p>";
-                    echo "<p>Фото: " . $row['photo_url'] . "</p>";
+                    echo "<p>Фото: <img src=' " . $row['photo_url'] . "' alt='Photo'> </p>";
                     echo "<p>Дата добавления: " . $row['date_added'] . "</p>";
 
                     echo "<form action='delete_news.php' method='post'>";

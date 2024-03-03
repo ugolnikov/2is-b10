@@ -105,7 +105,7 @@ include("../static/config.php");
         while ($row = $result->fetch_assoc()) {
             echo "<h2>" . $row['title'] . "</h2>";
             echo "<p>" . $row['content'] . "</p>";
-            echo "<p>Фото: " . $row['photo_url'] . "</p>";
+            echo "<p>Фото: <img src=' " . $row['photo_url'] . "' alt='Photo'> </p>";
             echo "<p>Дата добавления: " . $row['date_added'] . "</p>";
             echo "<hr>";
         }
