@@ -4,27 +4,21 @@ include("../static/config.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
     $news_id = $_POST['news_id'];
+    $title = $_POST['title'];
+    $content = $_POST['content'];
+    $photo_url = isset($_POST['photo_url']) ? $_POST['photo_url'] : 'нет фото';
 
-    // Получаем данные о выбранной новости
-    $query = "SELECT * FROM news WHERE id='$news_id'";
+    $query = "UPDATE news SET title='$title', content='$content', photo_url='$photo_url' WHERE id='$news_id'";
+
     $result = $db->query($query);
 
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-
-        // Выводим форму для редактирования новости
-        echo "<h1>Редактирование новости</h1>";
-        echo "<form action='update_news.php' method='post'>";
-        echo "<input type='hidden' name='news_id' value='" . $row['id'] . "'>";
-        echo "<input type='text' name='title' value='" . $row['title'] . "' placeholder='Заголовок'><br>";
-        echo "<input type='text' name='photo_url' value='" . $row['photo_url'] . "' placeholder='Ссылка к фото'><br>";
-        echo "<textarea name='content' placeholder='Текст новости'>" . $row['content'] . "</textarea><br>";
-        echo "<input type='submit' value='Обновить новость'>";
-        echo "</form>";
+    if ($result) {
+        echo "Новость успешно обновлена!";
     } else {
-        echo "Новость не найдена!";
+        echo "Ошибка: " . $db->error;
     }
 
     $db->close();
-    header("Location: ../admin_dashboard.php");
+} else {
+    echo "Ошибка: данные формы не были отправлены правильно.";
 }
