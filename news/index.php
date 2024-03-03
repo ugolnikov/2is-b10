@@ -104,7 +104,7 @@ include("../static/config.php");
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;'>
         <?
         $query = "SELECT * FROM news ORDER BY date_added DESC";
@@ -112,9 +112,11 @@ include("../static/config.php");
         $result = $db->query($query);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
+                echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'>";
+                echo "<div class='text_next_photo'>";
                 echo "<h2>" . $row['title'] . "</h2>";
                 echo "<p>" . $row['content'] . "</p>";
-                echo "<p>Фото: <br><img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'> </p>";
+                echo "</div> <br>";
                 echo "<p>Дата добавления: " . $row['date_added'] . "</p>";
                 echo "<hr>";
             }

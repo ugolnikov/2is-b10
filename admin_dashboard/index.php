@@ -40,14 +40,9 @@
             <h1 style="text-align: center;">Добавление новостей</h1>
             <form action="" method="post" style="display: flex; flex-wrap: nowrap; flex-direction: column; align-items: center; justify-content: center; align-content: center;">
                 <input type="text" id="title" name="title" placeholder="Заголовок"><br>
-                <textarea id="content" name="content" placeholder="Текст новости" style="resize: none"></textarea><br>
+                <textarea id="content" name="content" placeholder="Текст новости" style="resize: none;padding: 1rem;width: 100%;border-radius: 10px;border: none;border: 1px solid rgb(117, 117, 117);-moz-box-sizing: border-box;box-sizing: border-box;outline: none;"></textarea><br>
                 <input type="text" name="photo_url" id="photo_url" placeholder="Ссылка к фото"><br>
                 <input type="submit" value="Добавить новость">
-            </form>
-            <input type="text" id="title" name="title" placeholder="Заголовок"><br>
-            <textarea id="content" name="content" placeholder="Текст новости" style="resize: none;padding: 1rem;width: 100%;border-radius: 10px;border: none;border: 1px solid rgb(117, 117, 117);-moz-box-sizing: border-box;box-sizing: border-box;outline: none;"></textarea><br>
-            <input type="text" name="photo_url" id="photo_url" placeholder="Ссылка к фото"><br>
-            <input type="submit" value="Добавить новость">
             </form>
             <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
         </div>

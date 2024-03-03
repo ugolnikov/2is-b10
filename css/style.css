@@ -529,3 +529,8 @@ body>div>div>div>p:nth-child(3)>a {
 .news_img {
   height: 150px;
 }
+
+.text_next_photo {
+  display: flex;
+  flex-direction: column;
+}
