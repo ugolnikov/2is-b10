@@ -110,7 +110,6 @@ include("../static/config.php");
             display: flex;
             flex-wrap: nowrap;
             align-content: center;
-            justify-content: center;
             flex-direction: row;
             align-items: center;'>";
             if ($row['photo_url'] != 'нет фото') {
