@@ -533,4 +533,5 @@ body>div>div>div>p:nth-child(3)>a {
 .text_next_photo {
   display: flex;
   flex-direction: column;
+  margin: auto;
 }

@@ -56,7 +56,7 @@
                 // Получение данных из формы
                 $title = $_POST['title'];
                 $content = $_POST['content'];
-                $photo_url = isset($_POST['photo_url']) ? $_POST['photo_url'] : 'нет фото';
+                $photo_url = $_POST['photo_url'] != '' ? $_POST['photo_url'] : 'нет фото';
 
                 $query = "INSERT INTO news (title, content, photo_url) VALUES ('$title', '$content', '$photo_url')";
 
