@@ -38,11 +38,16 @@
     <div class="lk">
         <div class="left-bar">
             <h1 style="text-align: center;">Добавление новостей</h1>
-            <form action="" method="post">
+            <form action="" method="post" style="display: flex; flex-wrap: nowrap; flex-direction: column; align-items: center; justify-content: center; align-content: center;">
                 <input type="text" id="title" name="title" placeholder="Заголовок"><br>
                 <textarea id="content" name="content" placeholder="Текст новости" style="resize: none"></textarea><br>
                 <input type="text" name="photo_url" id="photo_url" placeholder="Ссылка к фото"><br>
                 <input type="submit" value="Добавить новость">
+            </form>
+            <input type="text" id="title" name="title" placeholder="Заголовок"><br>
+            <textarea id="content" name="content" placeholder="Текст новости" style="resize: none;padding: 1rem;width: 100%;border-radius: 10px;border: none;border: 1px solid rgb(117, 117, 117);-moz-box-sizing: border-box;box-sizing: border-box;outline: none;"></textarea><br>
+            <input type="text" name="photo_url" id="photo_url" placeholder="Ссылка к фото"><br>
+            <input type="submit" value="Добавить новость">
             </form>
             <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
         </div>
@@ -80,7 +85,16 @@
             $result = $db->query($query);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo "<div class='news-block'>";
+                    echo "<div class='news-block' style='
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+'>";
                     echo "<h2>" . $row['title'] . "</h2>";
                     echo "<p>" . $row['content'] . "</p>";
                     echo "<p>Фото: <br><img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'> </p>";

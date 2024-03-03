@@ -97,7 +97,15 @@ include("../static/config.php");
     </div>
 
     <!-- Блоки новостей -->
-    <div class="news_blocks">
+    <div class='news-block' style='
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;'>
         <?
         $query = "SELECT * FROM news ORDER BY date_added DESC";
 
