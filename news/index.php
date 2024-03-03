@@ -126,7 +126,16 @@ include("../static/config.php");
             echo "<hr>";
         }
     } else {
-        echo "Нет новостей";
+        echo "<p style='
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: nowrap;
+            height: 60%;'>
+            
+            Нет новостей
+            </p>";
     }
     $db->close();
     ?>
