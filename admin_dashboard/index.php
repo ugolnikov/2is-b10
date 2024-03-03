@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="lk">
         <div class="left-bar">
             <h1 style="text-align: center;">Добавление новостей</h1>
-            <form action="add_news.php" method="post">
+            <form action="" method="post">
                 <input type="text" id="title" name="title" placeholder="Заголовок"><br>
                 <input type="text" name="photo_url" id="photo_url" placeholder="Ссылка к фото"><br>
                 <textarea id="content" name="content" placeholder="Текст новости"></textarea><br>
