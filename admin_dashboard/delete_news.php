@@ -17,5 +17,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
     }
 
     $db->close();
-    header("Location: ../admin_dashboard.php");
+    header("Location: ../admin_dashboard");
 }
