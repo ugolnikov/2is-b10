@@ -1,26 +1,3 @@
-<?php
-include('../static/session.php');
-include("../static/config.php");
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Получение данных из формы
-    $title = $_POST['title'];
-    $content = $_POST['content'];
-    $photo_url = isset($_POST['photo_url']) ? $_POST['photo_url'] : 'нет фото';
-
-    $query = "INSERT INTO news (title, content, photo_url) VALUES ('$title', '$content', '$photo_url')";
-
-    $result = $db->query($query);
-
-    if ($result) {
-        echo "Новость успешно добавлена!";
-    } else {
-        echo "Ошибка: " . $db->error;
-    }
-
-    $db->close();
-}
-?>
 <html lang="en">
 
 <head>
@@ -71,6 +48,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="right-bar">
             <!-- Блоки новостей -->
+            <?php
+            include('../static/session.php');
+            include("../static/config.php");
+
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // Получение данных из формы
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+                $photo_url = isset($_POST['photo_url']) ? $_POST['photo_url'] : 'нет фото';
+
+                $query = "INSERT INTO news (title, content, photo_url) VALUES ('$title', '$content', '$photo_url')";
+
+                $result = $db->query($query);
+
+                if ($result) {
+                    echo "Новость успешно добавлена!";
+                } else {
+                    echo "Ошибка: " . $db->error;
+                }
+
+                $db->close();
+                header("Refresh:0");
+            }
+            ?>
             <?
             error_reporting(E_ERROR | E_PARSE);
             $query = "SELECT * FROM news ORDER BY date_added DESC";
@@ -84,13 +85,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<p>Фото: " . $row['photo_url'] . "</p>";
                     echo "<p>Дата добавления: " . $row['date_added'] . "</p>";
 
-                    // Кнопка удаления
                     echo "<form action='delete_news.php' method='post'>";
                     echo "<input type='hidden' name='news_id' value='" . $row['id'] . "'>";
                     echo "<input type='submit' value='Удалить'>";
                     echo "</form>";
 
-                    // Кнопка редактирования
                     echo "<form action='edit_news.php' method='post'>";
                     echo "<input type='hidden' name='news_id' value='" . $row['id'] . "'>";
                     echo "<input type='submit' value='Редактировать'>";
