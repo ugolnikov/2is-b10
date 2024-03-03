@@ -40,8 +40,8 @@
             <h1 style="text-align: center;">Добавление новостей</h1>
             <form action="" method="post">
                 <input type="text" id="title" name="title" placeholder="Заголовок"><br>
+                <textarea id="content" name="content" placeholder="Текст новости" style="resize: none"></textarea><br>
                 <input type="text" name="photo_url" id="photo_url" placeholder="Ссылка к фото"><br>
-                <textarea id="content" name="content" placeholder="Текст новости"></textarea><br>
                 <input type="submit" value="Добавить новость">
             </form>
             <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
@@ -83,7 +83,7 @@
                     echo "<div class='news-block'>";
                     echo "<h2>" . $row['title'] . "</h2>";
                     echo "<p>" . $row['content'] . "</p>";
-                    echo "<p>Фото: <img src=' " . $row['photo_url'] . "' alt='Photo'> </p>";
+                    echo "<p>Фото: <br><img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'> </p>";
                     echo "<p>Дата добавления: " . $row['date_added'] . "</p>";
 
                     echo "<form action='delete_news.php' method='post'>";

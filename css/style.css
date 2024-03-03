@@ -521,3 +521,11 @@ body>div>div>div>p:nth-child(3)>a {
   display: flex;
   flex-direction: column;
 }
+
+
+
+
+
+.news_img {
+  height: 150px;
+}

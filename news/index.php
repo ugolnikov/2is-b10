@@ -97,24 +97,25 @@ include("../static/config.php");
     </div>
 
     <!-- Блоки новостей -->
-    <?
-    $query = "SELECT * FROM news ORDER BY date_added DESC";
+    <div class="news_blocks">
+        <?
+        $query = "SELECT * FROM news ORDER BY date_added DESC";
 
-    $result = $db->query($query);
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<h2>" . $row['title'] . "</h2>";
-            echo "<p>" . $row['content'] . "</p>";
-            echo "<p>Фото: <img src=' " . $row['photo_url'] . "' alt='Photo'> </p>";
-            echo "<p>Дата добавления: " . $row['date_added'] . "</p>";
-            echo "<hr>";
+        $result = $db->query($query);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<h2>" . $row['title'] . "</h2>";
+                echo "<p>" . $row['content'] . "</p>";
+                echo "<p>Фото: <br><img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'> </p>";
+                echo "<p>Дата добавления: " . $row['date_added'] . "</p>";
+                echo "<hr>";
+            }
+        } else {
+            echo "Нет новостей";
         }
-    } else {
-        echo "Нет новостей";
-    }
-    $db->close();
-    ?>
-
+        $db->close();
+        ?>
+    </div>
 
 
     <!-- Футер -->

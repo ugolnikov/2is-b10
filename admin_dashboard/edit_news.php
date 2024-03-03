@@ -15,10 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
         echo "<form action='update_news.php' method='post'>";
         echo "<input type='hidden' name='news_id' value='" . $row['id'] . "'>";
         echo "<input type='text' name='title' value='" . $row['title'] . "' placeholder='Заголовок'><br>";
+        echo "<textarea name='content' placeholder='Текст новости' style='resize: none'>" . $row['content'] . "</textarea><br>";
         echo "<input type='text' name='photo_url' value='" . $row['photo_url'] . "' placeholder='Ссылка к фото'><br>";
-        echo "<textarea name='content' placeholder='Текст новости'>" . $row['content'] . "</textarea><br>";
         echo "<input type='submit' value='Обновить новость'>";
         echo "</form>";
+        echo "<a href='../admin_dashboard'>Вернуться назад</a>";
     } else {
         echo "Новость не найдена!";
     }
