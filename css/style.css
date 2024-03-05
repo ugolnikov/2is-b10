@@ -592,3 +592,21 @@ body>div>div>div>p:nth-child(3)>a {
   background-color: #ecf4f7;
   outline: 1px solid #193441;
 }
+
+
+table,
+tr,
+td,
+th {
+  padding: 1rem;
+
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}

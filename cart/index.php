@@ -1,13 +1,6 @@
 <?
 require('../static/session.php');
 require('../static/config.php');
-if ((isset($_POST['clear_cart'])) && ($_SERVER['REQUEST_METHOD'] == 'POST')) {
-    $clear_sql = "DELETE FROM cart WHERE user_id = $user_id";
-    if ($db->query($clear_sql) === TRUE) {
-        header('Refresh: 2;');
-        echo "Корзина успешно очищена";
-    }
-}
 ?>
 
 
@@ -90,66 +83,67 @@ if ((isset($_POST['clear_cart'])) && ($_SERVER['REQUEST_METHOD'] == 'POST')) {
     </div>
 
     <!-- Корзина -->
-    <?
-    $user_id = $_SESSION['user_id'];
+    <div class="cart">
+        <?
+        $user_id = $_SESSION['user_id'];
 
-    $sql = "SELECT id, service_id, price FROM cart WHERE user_id = $user_id";
-    $result = $db->query($sql);
+        $sql = "SELECT id, service_id, price FROM cart WHERE user_id = $user_id";
+        $result = $db->query($sql);
 
-    if ($result->num_rows > 0) {
-        echo "<h2>Содержимое корзины:</h2>";
-        echo "<table border='1' cellspacing='0'>";
-        echo "<tr><th>Название услуги</th><th>Цена</th></tr>";
-        while ($row = $result->fetch_assoc()) {
-            $service_id = $row["service_id"];
-            $price = $row["price"];
+        if ($result->num_rows > 0) {
+            echo "<h2>Содержимое корзины:</h2>";
+            echo "<table border='1' cellspacing='0'>";
+            echo "<tr><th>Название услуги</th><th>Цена</th></tr>";
+            while ($row = $result->fetch_assoc()) {
+                $service_id = $row["service_id"];
+                $price = $row["price"];
 
 
-            $service_name = "";
-            switch ($service_id) {
-                case 1:
-                    $service_name = "Индивидуальные занятия с тренером";
-                    break;
-                case 2:
-                    $service_name = "Групповые тренировки по дисциплинам";
-                    break;
-                case 3:
-                    $service_name = "Подготовка к соревнованиям";
-                    break;
-                case 4:
-                    $service_name = "Тренировочные лагеря и интенсивные курсы";
-                    break;
-                case 5:
-                    $service_name = "Физическая подготовка и здоровье";
-                    break;
-                case 6:
-                    $service_name = "Медицинский контроль и сопровождение";
-                    break;
+                $service_name = "";
+                switch ($service_id) {
+                    case 1:
+                        $service_name = "Индивидуальные занятия с тренером";
+                        break;
+                    case 2:
+                        $service_name = "Групповые тренировки по дисциплинам";
+                        break;
+                    case 3:
+                        $service_name = "Подготовка к соревнованиям";
+                        break;
+                    case 4:
+                        $service_name = "Тренировочные лагеря и интенсивные курсы";
+                        break;
+                    case 5:
+                        $service_name = "Физическая подготовка и здоровье";
+                        break;
+                    case 6:
+                        $service_name = "Медицинский контроль и сопровождение";
+                        break;
+                }
+
+                echo "<tr>";
+                echo "<td>" . $service_name . "</td>";
+                echo "<td>" . $price . "₽</td>";
+                echo "</tr>";
             }
-
-            echo "<tr>";
-            echo "<td>" . $service_name . "</td>";
-            echo "<td>" . $price . "₽</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        $total_sql = "SELECT SUM(price) AS total FROM cart WHERE user_id = $user_id";
-        $total_result = $db->query($total_sql);
-        if ($total_result->num_rows > 0) {
-            $total_row = $total_result->fetch_assoc();
-            $total_price = $total_row['total'];
-        }
-        echo "<form action='' method='post'>
+            echo "</table>";
+            $total_sql = "SELECT SUM(price) AS total FROM cart WHERE user_id = $user_id";
+            $total_result = $db->query($total_sql);
+            if ($total_result->num_rows > 0) {
+                $total_row = $total_result->fetch_assoc();
+                $total_price = $total_row['total'];
+            }
+            echo "<form action='clear_cart.php method='post'>
     <input type='hidden' name='clear_cart' value='1'>
     <button type='submit'>Очистить корзину</button></form>";
-        echo "<p>Общая стоимость: <?php echo $total_price; ?>₽</p>";
-        echo "<input type='text' placeholder='Номер телефона'>";
-        echo "<button>Оформить заказ</button>";
-    } else {
-        echo "Корзина пуста";
-    }
-    ?>
-
+            echo "<p>Общая стоимость: <?php echo $total_price; ?>₽</p>";
+            echo "<input type='text' placeholder='Номер телефона'>";
+            echo "<br><button>Оформить заказ</button>";
+        } else {
+            echo "Корзина пуста";
+        }
+        ?>
+    </div>
 
 
 
