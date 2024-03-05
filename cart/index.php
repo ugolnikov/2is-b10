@@ -1,7 +1,4 @@
 <?
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
 require('../static/session.php');
 require('../static/config.php');
 ?>
@@ -110,13 +107,22 @@ require('../static/config.php');
             $service_name = "";
             switch ($service_id) {
                 case 1:
-                    $service_name = "Услуга 1";
+                    $service_name = "Индивидуальные занятия с тренером";
                     break;
                 case 2:
-                    $service_name = "Услуга 2";
+                    $service_name = "Групповые тренировки по дисциплинам";
                     break;
                 case 3:
-                    $service_name = "Услуга 3";
+                    $service_name = "Подготовка к соревнованиям";
+                    break;
+                case 4:
+                    $service_name = "Тренировочные лагеря и интенсивные курсы";
+                    break;
+                case 5:
+                    $service_name = "Физическая подготовка и здоровье";
+                    break;
+                case 6:
+                    $service_name = "Медицинский контроль и сопровождение";
                     break;
             }
 

@@ -1,7 +1,28 @@
 <?
 include("../static/session.php");
-?>
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_SESSION['login_user'])) {
+        include('../static/config.php');
 
+        $user_id = $_SESSION['user_id'];
+        $service_id = $_POST['service_id'];
+
+        $quantity = 1;
+
+        $sql = "INSERT INTO cart (user_id, service_id, quantity) VALUES ($user_id, $service_id, $quantity)";
+
+        if ($db->query($sql) === TRUE) {
+            header("Location: ../cart");
+            exit;
+        } else {
+            echo "Ошибка при добавлении услуги в корзину: " . $db->error;
+        }
+    } else {
+        header("Location: ../login");
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,30 +165,7 @@ include("../static/session.php");
             <input type="submit" value="Добавить в корзину">
         </form>
     </div>
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (isset($_SESSION['login_user'])) {
-            include('../static/config.php');
 
-            $user_id = $_SESSION['user_id'];
-            $service_id = $_POST['service_id'];
-
-            $quantity = 1;
-
-            $sql = "INSERT INTO cart (user_id, service_id, quantity) VALUES ($user_id, $service_id, $quantity)";
-
-            if ($db->query($sql) === TRUE) {
-                header("Location: ../cart");
-                exit;
-            } else {
-                echo "Ошибка при добавлении услуги в корзину: " . $db->error;
-            }
-        } else {
-            header("Location: ../login");
-            exit;
-        }
-    }
-    ?>
 
 
 
