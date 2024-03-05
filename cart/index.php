@@ -93,9 +93,9 @@ require('../static/config.php');
 
     <!-- Корзина -->
     <?
-    $user_id = $_SESSION['login_user'];
+    $user_id = $_SESSION['user_id'];
 
-    $sql = "SELECT cart.id, services.name, cart.quantity FROM cart INNER JOIN services ON cart.service_id = services.id WHERE cart.user_id = $user_id";
+    $sql = "SELECT id, service_name, quantity FROM cart WHERE user_id = $user_id";
     $result = $db->query($sql);
 
     if ($result->num_rows > 0) {

@@ -116,7 +116,7 @@ include("../static/session.php");
         if (isset($_SESSION['login_user'])) {
             include('../static/config.php');
 
-            $user_id = $_SESSION['login_user'];
+            $user_id = $_SESSION['user_id'];
             $service_id = $_POST['service_id'];
             $quantity = 1;
 

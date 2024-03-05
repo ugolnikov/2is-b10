@@ -30,5 +30,5 @@ if ($isAdmin) {
   $ses_sql = mysqli_query($db, "SELECT username FROM users WHERE username = '$user_check'");
   $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
   $login_session = $row['username'];
-  $_SESSION['user_id'] = $row['id'];
+  $_SESSION['user_id'] = mysqli_query($db, "SELECT id FROM users WHERE username = '$login_session'")->fetch_assoc()['id'];
 }
