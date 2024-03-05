@@ -112,7 +112,7 @@ include("../static/session.php");
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_SESSION['login_user'])) {
 
-            $user_id = $_SESSION['user_id'];
+            $user_id = $_SESSION['login_user'];
             $service_id = $_POST['service_id'];
             $quantity = 1;
 

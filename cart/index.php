@@ -90,7 +90,7 @@ require('../static/config.php');
 
     <!-- Корзина -->
     <?
-    $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['login_user'];
 
     $sql = "SELECT cart.id, services.name, cart.quantity FROM cart INNER JOIN services ON cart.service_id = services.id WHERE cart.user_id = $user_id";
     $result = $db->query($sql);
