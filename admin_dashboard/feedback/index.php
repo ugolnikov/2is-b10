@@ -61,7 +61,7 @@
                     echo "<p>Дата: " . $row['created_at'] . "</p>";
 
                     echo "<form action='' method='post'>";
-                    echo "<input type='hidden' name='news_id' value='" . $row['id'] . "'>";
+                    echo "<input type='hidden' name='req_id' value='" . $row['id'] . "'>";
                     echo "<input type='submit' value='Удалить'>";
                     echo "</form>";
 
@@ -75,10 +75,10 @@
             ?>
         </div>
         <?
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
-            $news_id = $_POST['news_id'];
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['req_id'])) {
+            $req_id = $_POST['req_id'];
 
-            $query = "DELETE FROM feedback WHERE id='$news_id'";
+            $query = "DELETE FROM feedback WHERE id='$req_id'";
 
 
             $result = $db->query($query);
