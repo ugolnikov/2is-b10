@@ -21,6 +21,13 @@ if ($isAdmin) {
   }
 }
 
-$ses_sql = mysqli_query($db, "SELECT username FROM users WHERE username = '$user_check'");
-$row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
-$login_session = $row['username'];
+
+if ($isAdmin) {
+  $ses_sql = mysqli_query($db, "SELECT username FROM admin WHERE username = '$user_check'");
+  $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
+  $login_session = $row['username'];
+} else {
+  $ses_sql = mysqli_query($db, "SELECT username FROM users WHERE username = '$user_check'");
+  $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
+  $login_session = $row['username'];
+}
