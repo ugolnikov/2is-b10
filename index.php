@@ -257,10 +257,11 @@
             $message = $_POST['message'];
             $sql = "INSERT INTO feedback (name, tel, message) VALUES ('$name', '$tel', '$message')";
 
-            if ($conn->query($sql) === TRUE) {
+            if ($db->query($sql) === TRUE) {
                 echo "<p>Ваше сообщение успешно отправлено. Спасибо!</p>";
+                header("refresh:1;url=./.php");
             } else {
-                echo "Ошибка: " . $sql . "<br>" . $conn->error;
+                echo "Ошибка: " . $sql . "<br>" . $db->error;
             }
             $db->close();
         }
