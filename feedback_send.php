@@ -1,5 +1,5 @@
 <?php
-require('../static/config.php');
+require('./static/config.php');
 $name = $_POST['name'];
 $tel = $_POST['tel'];
 $message = $_POST['message'];
@@ -9,9 +9,9 @@ echo $tel;
 echo $message;
 $sql = "INSERT INTO feedback (name, tel, message) VALUES ('$name', '$tel', '$message')";
 
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($db, $sql)) {
     echo "Запись успешно добавлена в базу данных";
 } else {
-    echo "Ошибка: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Ошибка: " . $sql . "<br>" . mysqli_error($db);
 }
 $db->close();
