@@ -1,3 +1,6 @@
+<?php
+require('../../static/session.php');
+?>
 <html lang="en">
 
 <head>

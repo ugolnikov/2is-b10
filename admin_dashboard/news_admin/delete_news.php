@@ -1,6 +1,6 @@
 <?php
-include("../static/session.php");
-include("../static/config.php");
+require("../../static/session.php");
+require("../../static/config.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
     $news_id = $_POST['news_id'];
@@ -17,5 +17,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
     }
 
     $db->close();
-    header("Location: ../admin_dashboard");
+    header("Location: ../news_admin");
 }

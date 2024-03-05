@@ -1,5 +1,5 @@
 <?php
-include('../static/session.php');
+require('../static/session.php');
 ?>
 <html lang="en">
 

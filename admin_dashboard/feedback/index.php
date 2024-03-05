@@ -39,7 +39,7 @@
         <div class="left-bar">
             <h1 style="text-align: center;">Все обращения</h1>
             <?
-            echo date('d.m.Y');
+            echo date("Y-m-d H:i:s");;
             ?>
             <h2><a href="../">Назад</a></h2>
         </div>
