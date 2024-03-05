@@ -46,14 +46,14 @@
             <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
         </div>
         <div class="right-bar">
-            <?php echo date("d/m/Y"); ?>
+            <p style='display: flex; align-items: center; justify-content: center; align-content: center; flex-wrap: nowrap; height: 60%;'> <?php echo date("d/m/Y"); ?></p>
         </div>
     </div>
 
 
 
     <!-- Footer -->
-    <div class="footer" style="position: relative;top: 150px;left:0px;bottom:0px;height:150px;width:100%;margin-top: 300px;">
+    <div class="footer" style="position: relative;left:0px;bottom:0px;height:150px;width:100%;margin-top: 50px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>

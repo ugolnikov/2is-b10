@@ -11,7 +11,7 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <a href="../../"><img src="../static/logo.png" alt="Logo" class="logo"></a>
+        <a href="../../"><img src="../../static/logo.png" alt="Logo" class="logo"></a>
         <ul>
             <li>
                 <div class="dropdown">
@@ -96,7 +96,7 @@
 
 
     <!-- Footer -->
-    <div class="footer" style="position: relative;top: 150px;left:0px;bottom:0px;height:150px;width:100%;margin-top: 300px;">
+    <div class="footer" style="position: relative;left:0px;bottom:0px;height:150px;width:100%;margin-top: 50px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>
