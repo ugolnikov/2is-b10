@@ -60,7 +60,7 @@
                     echo "<p>Сообщение: " . $row['message'] . "</p>";
                     echo "<p>Дата: " . $row['created_at'] . "</p>";
 
-                    echo "<form action='' method='post'>";
+                    echo "<form action='delete_req.php' method='post'>";
                     echo "<input type='hidden' name='req_id' value='" . $row['id'] . "'>";
                     echo "<input type='submit' value='Удалить'>";
                     echo "</form>";

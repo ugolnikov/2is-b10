@@ -10,7 +10,8 @@ echo $message;
 $sql = "INSERT INTO feedback (name, tel, message) VALUES ('$name', '$tel', '$message')";
 
 if (mysqli_query($db, $sql)) {
-    echo "Запись успешно добавлена в базу данных";
+    echo "Спасибо за обращение";
+    header('url=./; refresh=2;');
 } else {
     echo "Ошибка: " . $sql . "<br>" . mysqli_error($db);
 }
