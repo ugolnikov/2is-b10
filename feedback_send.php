@@ -11,7 +11,7 @@ $sql = "INSERT INTO feedback (name, tel, message) VALUES ('$name', '$tel', '$mes
 
 if (mysqli_query($db, $sql)) {
     echo "Спасибо за обращение";
-    header('url=./; refresh=2;');
+    header("Refresh: 2; URL = /");
 } else {
     echo "Ошибка: " . $sql . "<br>" . mysqli_error($db);
 }
