@@ -111,6 +111,7 @@ include("../static/session.php");
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_SESSION['login_user'])) {
+            include('../static/config.php');
 
             $user_id = $_SESSION['login_user'];
             $service_id = $_POST['service_id'];
