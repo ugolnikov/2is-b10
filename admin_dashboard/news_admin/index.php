@@ -44,7 +44,7 @@ require('../../static/session.php');
             <!-- Блоки новостей -->
             <?php
             require('../../static/session.php');
-            require("../../static/config.php");
+            require_once("../../static/config.php");
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Получение данных из формы

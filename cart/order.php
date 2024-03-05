@@ -1,6 +1,6 @@
 <?
 require('../static/session.php');
-require('../static/config.php');
+require_once('../static/config.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_SESSION['login_user'])) {
@@ -20,8 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($db->query($insert_order_sql) === TRUE) {
                 $clear_cart_sql = "DELETE FROM cart WHERE user_id = $user_id";
                 if ($db->query($clear_cart_sql) === TRUE) {
-                    header("Refresh: 5;Location: ../;");
-                    exit;
+                    echo "<h4>Большое спасибо за заказ!</h4>
+                        <p>В ближайшее время мы свяжемся с вами.</p>
+                        <a href='../' style='text-decoration: underline;'>Назад</a>";
                 } else {
                     echo "Ошибка очистки: " . $db->error;
                 }
@@ -49,8 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <h4>Большое спасибо за заказ!</h4>
-    <p>В ближайшее время мы свяжемся с вами.</p>
+
 </body>
 
 </html>

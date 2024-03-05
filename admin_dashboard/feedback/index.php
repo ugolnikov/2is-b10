@@ -38,7 +38,7 @@
             <!-- Блоки заявок -->
             <?php
             require('../../static/session.php');
-            require("../../static/config.php");
+            require_once("../../static/config.php");
             error_reporting(E_ERROR | E_PARSE);
             $query = "SELECT * FROM feedback ORDER BY created_at DESC";
 

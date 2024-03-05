@@ -1,6 +1,6 @@
 <?php
 require("../../static/session.php");
-require("../../static/config.php");
+require_once("../../static/config.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
     $news_id = $_POST['news_id'];

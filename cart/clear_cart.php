@@ -1,5 +1,5 @@
 <?php
-require('../static/config.php');
+require_once('../static/config.php');
 require('../static/session.php');
 
 if (!isset($_SESSION['login_user'])) {

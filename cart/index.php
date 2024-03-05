@@ -145,7 +145,7 @@ require('../static/config.php');
             echo "</form>";
         } else {
             echo "Корзина пуста";
-            echo "<a href='../services'>Перейти к услугами</a>";
+            echo "<a href='../services' style='text-decoration: underline;'>Перейти к услугами</a>";
         }
         ?>
     </div>

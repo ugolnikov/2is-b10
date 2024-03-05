@@ -1,6 +1,5 @@
 <?
-error_reporting(E_ERROR | E_PARSE);
-include("../static/config.php");
+require_once("../static/config.php");
 ?>
 
 <!DOCTYPE html>
