@@ -7,7 +7,7 @@ require('../../static/session.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>СТАРТ | Личный кабинет</title>
-    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../static/favicon.ico">
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 
@@ -49,11 +49,11 @@ require('../../static/session.php');
             </form>
             <h3><a href="../" style="text-decoration: underline;">Назад</a></h3>
         </div>
-        <div class="right-bar">
+        <div class="right-bar" style="height: fit-content;">
             <!-- Блоки новостей -->
             <?php
-            include('../../static/session.php');
-            include("../../static/config.php");
+            require('../../static/session.php');
+            require("../../static/config.php");
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Получение данных из формы
