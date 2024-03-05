@@ -9,13 +9,9 @@ echo $tel;
 echo $message;
 $sql = "INSERT INTO feedback (name, tel, message) VALUES ('$name', '$tel', '$message')";
 
-
-
-
-if ($db->query($sql) === TRUE) {
-    echo "<p>Ваше сообщение успешно отправлено. Спасибо!</p>";
-    // header('Location:../');
+if (mysqli_query($conn, $sql)) {
+    echo "Запись успешно добавлена в базу данных";
 } else {
-    echo "Ошибка: " . $sql . "<br>" . $db->error;
+    echo "Ошибка: " . $sql . "<br>" . mysqli_error($conn);
 }
 $db->close();

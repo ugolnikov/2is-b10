@@ -46,8 +46,8 @@
         <div class="right-bar">
             <!-- Блоки заявок -->
             <?php
-            include('../../static/session.php');
-            include("../../static/config.php");
+            require('../../static/session.php');
+            require("../../static/config.php");
             error_reporting(E_ERROR | E_PARSE);
             $query = "SELECT * FROM feedback ORDER BY created_at DESC";
 
@@ -75,21 +75,7 @@
             ?>
         </div>
         <?
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['req_id'])) {
-            $req_id = $_POST['req_id'];
 
-            $query = "DELETE FROM feedback WHERE id='$req_id'";
-
-
-            $result = $db->query($query);
-
-            if ($result) {
-                echo "Заявка обработанна!";
-                header("Refresh:0");
-            } else {
-                echo "Ошибка: " . $db->error;
-            }
-        }
         ?>
     </div>
 

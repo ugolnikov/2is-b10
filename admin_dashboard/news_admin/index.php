@@ -11,7 +11,7 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <a href="../../"><img src="../static/logo.png" alt="Logo" class="logo"></a>
+        <a href="../../"><img src="../../static/logo.png" alt="Logo" class="logo"></a>
         <ul>
             <li>
                 <div class="dropdown">
