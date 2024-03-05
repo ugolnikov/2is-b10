@@ -259,7 +259,6 @@
 
             if ($db->query($sql) === TRUE) {
                 echo "<p>Ваше сообщение успешно отправлено. Спасибо!</p>";
-                header("refresh:1;url=./.php");
             } else {
                 echo "Ошибка: " . $sql . "<br>" . $db->error;
             }
