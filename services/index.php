@@ -120,11 +120,11 @@ include("../static/session.php");
             $user_id = $_SESSION['user_id'];
 
             if (isset($_POST['submit_service_1'])) {
-                $service_id = $_POST['service_id_1'];
+                $service_id = $_POST['service_id'];
             } elseif (isset($_POST['submit_service_2'])) {
-                $service_id = $_POST['service_id_2'];
+                $service_id = $_POST['service_id'];
             } elseif (isset($_POST['submit_service_3'])) {
-                $service_id = $_POST['service_id_3'];
+                $service_id = $_POST['service_id'];
             }
 
             $quantity = 1;
