@@ -137,8 +137,10 @@ require('../static/config.php');
     <input type='hidden' name='clear_cart' value='1'>
     <button type='submit'>Очистить корзину</button></form>";
             echo "<p>Общая стоимость: <?php echo $total_price; ?>₽</p>";
-            echo "<input type='text' placeholder='Номер телефона'>";
-            echo "<br><button>Оформить заказ</button>";
+            echo "<form action='clear_cart.php' method='post'>";
+            echo "<input type='text' placeholder='Номер телефона' required>";
+            echo "<br><button type='submit'>Оформить заказ</button>";
+            echo "</form>";
         } else {
             echo "Корзина пуста";
         }
