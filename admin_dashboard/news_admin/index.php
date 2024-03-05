@@ -16,16 +16,7 @@ require('../../static/session.php');
     <div class="header">
         <a href="../../"><img src="../../static/logo.png" alt="Logo" class="logo"></a>
         <ul>
-            <li>
-                <div class="dropdown">
-                    <a class="dropbtn btn-header">Услуги</a>
-                    <div class="dropdown-content">
-                        <a href="#">Услуга 1</a>
-                        <a href="#">Услуга 2</a>
-                        <a href="#">Услуга 3</a>
-                    </div>
-                </div>
-
+            <li><a href="../../services">Услуги</a></li>
             <li><a href="../../about" class="btn-header">О нас</a></li>
             <li><a href="../../news" class="btn-header">Новости</a></li>
             <li><a href="../../contacts" class="btn-header">Контакты</a></li>

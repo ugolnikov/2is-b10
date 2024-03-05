@@ -10,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
-        /* Стили для прелоадера */
         .preloader {
             position: fixed;
             left: 0;
@@ -25,25 +24,19 @@
             opacity: 1;
             transition: opacity 0.3s ease;
             pointer-events: none;
-            /* Пропускать события указателя мыши через элемент */
         }
 
-        /* Скрытие прелоадера при выделении текста */
         ::selection {
             background-color: transparent;
-            /* Сделать выделенный текст прозрачным */
         }
 
         .preloader .loader {
             border: 8px solid #f3f3f3;
-            /* Цвет кружка */
             border-top: 8px solid #3498db;
-            /* Цвет кружка при загрузке */
             border-radius: 50%;
             width: 50px;
             height: 50px;
             animation: spin 1s linear infinite;
-            /* Анимация кручения */
         }
 
         @keyframes spin {
@@ -56,7 +49,6 @@
             }
         }
 
-        /* Скрыть прелоадер после загрузки страницы */
         .loaded .preloader {
             opacity: 0;
         }
@@ -73,20 +65,11 @@
     <div class="header">
         <a href="/"><img src="../static/logo.png" alt="Logo" class="logo"></a>
         <ul>
-            <li>
-                <div class="dropdown">
-                    <a class="dropbtn btn-header">Услуги</a>
-                    <div class="dropdown-content">
-                        <a href="#">Услуга 1</a>
-                        <a href="#">Услуга 2</a>
-                        <a href="#">Услуга 3</a>
-                    </div>
-                </div>
-
-            <li><a href="/about" class="btn-header">О нас</a></li>
-            <li><a href="/news" class="btn-header">Новости</a></li>
-            <li><a href="/contacts" class="btn-header">Контакты</a></li>
-            <li><a href="/dashboard" class="btn-header">Личный кабинет</a></li>
+            <li><a href="../services">Услуги</a></li>
+            <li><a href="../about" class="btn-header">О нас</a></li>
+            <li><a href="../news" class="btn-header">Новости</a></li>
+            <li><a href="../contacts" class="btn-header">Контакты</a></li>
+            <li><a href="../dashboard" class="btn-header">Личный кабинет</a></li>
         </ul>
         <a href="/cart"><svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" width="1em" height="1em" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z" />
