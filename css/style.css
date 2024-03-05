@@ -594,7 +594,6 @@ body>div>div>div>p:nth-child(3)>a {
 }
 
 
-table,
 tr,
 td,
 th {
@@ -609,4 +608,21 @@ th {
   justify-content: center;
   align-items: center;
   width: 80%;
+}
+
+.cart button {
+  padding: 1rem;
+  font-size: large;
+  width: 40%;
+  border: none;
+  background-color: #193441;
+  color: #ecf4f7;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.cart button:hover {
+  color: #193441;
+  background-color: #ecf4f7;
+  outline: 1px solid #193441;
 }
