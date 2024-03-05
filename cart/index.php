@@ -133,11 +133,11 @@ require('../static/config.php');
                 $total_row = $total_result->fetch_assoc();
                 $total_price = $total_row['total'];
             }
-            echo "<form action='clear_cart.php method='post'>
+            echo "<form action='clear_cart.php' method='post'>
             <input type='hidden' name='asd'>
             <button type='submit'>Очистить корзину</button>
             </form>";
-            echo "<p>Общая стоимость: <?php echo $total_price; ?>₽</p>";
+            echo "<p>Общая стоимость:" . $total_price . "₽</p>";
             echo "<form action='clear_cart.php' method='post'>";
             echo "<input type='text' placeholder='Номер телефона' required>";
             echo "<br><button type='submit'>Оформить заказ</button>";

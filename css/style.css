@@ -611,6 +611,7 @@ th {
 }
 
 .cart button {
+  margin-top: 1rem;
   padding: 1rem;
   font-size: large;
   width: 80%;
@@ -619,6 +620,7 @@ th {
   color: #ecf4f7;
   cursor: pointer;
   transition: 0.3s ease all;
+  border-radius: 10px;
 }
 
 .cart button:hover {
