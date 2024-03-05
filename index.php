@@ -249,6 +249,22 @@
             </label>
             <button type="submit">Отправить</button>
         </form>
+        <?
+        if (($_SERVER['REQUEST_METHOD'] == 'POST') && (isset($_POST['name']) && isset($_POST['tel']) && isset($_POST['message']))) {
+            include('./static/config.php');
+            $name = $_POST['name'];
+            $tel = $_POST['tel'];
+            $message = $_POST['message'];
+            $sql = "INSERT INTO feedback (name, tel, message) VALUES ('$name', '$tel', '$message')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "<p>Ваше сообщение успешно отправлено. Спасибо!</p>";
+            } else {
+                echo "Ошибка: " . $sql . "<br>" . $conn->error;
+            }
+            $db->close();
+        }
+        ?>
     </div>
 
 

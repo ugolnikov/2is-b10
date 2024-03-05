@@ -115,7 +115,7 @@ include("../static/config.php");
             if ($row['photo_url'] != 'нет фото') {
                 echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'>";
             } else {
-                echo "<p>Фото отсутствует</p>";
+                echo "<div class='news_img'><p>Фото отсутствует</p></div>";
             }
 
             echo "<div class='text_next_photo'>";

@@ -53,11 +53,7 @@ include('../static/session.php');
 
 
   <!-- Footer -->
-  <div class="footer" style="position:fixed;
-   left:0px;
-   bottom:0px;
-   height:150px;
-   width:100%;">
+  <div class="footer" style="position: relative;top: 150px;left:0px;bottom:0px;height:150px;width:100%;margin-top: 300px;">
     <div class="text">
       Созданно: <br>Угольников Д. О. <b>2-ИС</b>
     </div>
