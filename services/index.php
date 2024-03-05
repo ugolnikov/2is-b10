@@ -95,20 +95,20 @@ include("../static/session.php");
         <div class="service">
             <img src="service1.jpg" alt="Услуга 1">
             <p>Услуга 1</p>
-            <input type="hidden" name="service_id_1" value="1">
-            <input type="submit" value="Добавить в корзину">
+            <input type="hidden" name="service_id" value="1">
+            <input type="submit" name="submit_service_1" value="Добавить в корзину">
         </div>
         <div class="service">
             <img src="service2.jpg" alt="Услуга 2">
             <p>Услуга 2</p>
-            <input type="hidden" name="service_id_2" value="2">
-            <input type="submit" value="Добавить в корзину">
+            <input type="hidden" name="service_id" value="2">
+            <input type="submit" name="submit_service_2" value="Добавить в корзину">
         </div>
         <div class="service">
             <img src="service3.jpg" alt="Услуга 3">
             <p>Услуга 3</p>
-            <input type="hidden" name="service_id_3" value="3">
-            <input type="submit" value="Добавить в корзину">
+            <input type="hidden" name="service_id" value="3">
+            <input type="submit" name="submit_service_3" value="Добавить в корзину">
         </div>
     </form>
     <?php
@@ -117,21 +117,30 @@ include("../static/session.php");
             include('../static/config.php');
 
             $user_id = $_SESSION['user_id'];
-            $service_id = $_POST['service_id'];
+
+            if (isset($_POST['submit_service_1'])) {
+                $service_id = $_POST['service_id_1'];
+            } elseif (isset($_POST['submit_service_2'])) {
+                $service_id = $_POST['service_id_2'];
+            } elseif (isset($_POST['submit_service_3'])) {
+                $service_id = $_POST['service_id_3'];
+            }
+
             $quantity = 1;
 
             $sql = "INSERT INTO cart (user_id, service_id, quantity) VALUES ($user_id, $service_id, $quantity)";
 
             if ($db->query($sql) === TRUE) {
-                header("URL = ../cart");
+                header("Location: ../cart");
+                exit;
             } else {
                 echo "Ошибка при добавлении услуги в корзину: " . $db->error;
             }
         } else {
-            header("URL =../login");
+            header("Location: ../login");
+            exit;
         }
     }
-
     ?>
 
 
