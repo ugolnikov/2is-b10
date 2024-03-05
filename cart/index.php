@@ -138,7 +138,7 @@ require('../static/config.php');
             <button type='submit'>Очистить корзину</button>
             </form>";
             echo "<p>Общая стоимость:" . $total_price . "₽</p>";
-            echo "<form action='clear_cart.php' method='post'>";
+            echo "<form action='order.php' method='post'>";
             echo "<input type='text' placeholder='Номер телефона' required>";
             echo "<br><button type='submit'>Оформить заказ</button>";
             echo "</form>";
