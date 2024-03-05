@@ -95,7 +95,7 @@ require('../static/config.php');
     <?
     $user_id = $_SESSION['user_id'];
 
-    $sql = "SELECT id, service_name, quantity FROM cart WHERE user_id = $user_id";
+    $sql = "SELECT id, service_id, quantity FROM cart WHERE user_id = $user_id";
     $result = $db->query($sql);
 
     if ($result->num_rows > 0) {
@@ -103,16 +103,32 @@ require('../static/config.php');
         echo "<table border='1'>";
         echo "<tr><th>Название услуги</th><th>Количество</th></tr>";
         while ($row = $result->fetch_assoc()) {
+            $service_id = $row["service_id"];
+            $quantity = $row["quantity"];
+
+
+            $service_name = "";
+            switch ($service_id) {
+                case 1:
+                    $service_name = "Услуга 1";
+                    break;
+                case 2:
+                    $service_name = "Услуга 2";
+                    break;
+                case 3:
+                    $service_name = "Услуга 3";
+                    break;
+            }
+
             echo "<tr>";
-            echo "<td>" . $row["name"] . "</td>";
-            echo "<td>" . $row["quantity"] . "</td>";
+            echo "<td>" . $service_name . "</td>";
+            echo "<td>" . $quantity . "</td>";
             echo "</tr>";
         }
         echo "</table>";
     } else {
         echo "Корзина пуста";
     }
-
     $db->close();
     ?>
 

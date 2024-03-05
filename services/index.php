@@ -95,19 +95,19 @@ include("../static/session.php");
         <div class="service">
             <img src="service1.jpg" alt="Услуга 1">
             <p>Услуга 1</p>
-            <input type="hidden" name="service_id" value="1">
+            <input type="hidden" name="service_id_1" value="1">
             <input type="submit" value="Добавить в корзину">
         </div>
         <div class="service">
             <img src="service2.jpg" alt="Услуга 2">
             <p>Услуга 2</p>
-            <input type="hidden" name="service_id" value="2">
+            <input type="hidden" name="service_id_2" value="2">
             <input type="submit" value="Добавить в корзину">
         </div>
         <div class="service">
             <img src="service3.jpg" alt="Услуга 3">
             <p>Услуга 3</p>
-            <input type="hidden" name="service_id" value="3">
+            <input type="hidden" name="service_id_3" value="3">
             <input type="submit" value="Добавить в корзину">
         </div>
     </form>
