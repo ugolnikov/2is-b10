@@ -1,5 +1,5 @@
 <?php
-include('../static/config.php');
+require('../static/config.php');
 $name = $_POST['name'];
 $tel = $_POST['tel'];
 $message = $_POST['message'];

@@ -230,19 +230,19 @@
         <form class="popup" action="./feedback_send/feedback_send.php">
             <img src="/static/close.svg" class="close-popup" alt="close">
             <label>
-                <input type="text" name="name">
+                <input type="text" name="name" id="name">
                 <div class="label__text">
                     Ваше имя
                 </div>
             </label>
             <label>
-                <input type="tel" name="tel">
+                <input type="tel" name="tel" id="tel">
                 <div class="label__text">
                     Ваш телефон
                 </div>
             </label>
             <label>
-                <textarea name="message"></textarea>
+                <textarea name="message" id="message"></textarea>
                 <div class="label__text">
                     Ваше сообщение
                 </div>
