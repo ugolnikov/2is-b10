@@ -12,13 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($total_result->num_rows > 0) {
             $total_row = $total_result->fetch_assoc();
             $total_price = $total_row['total'];
+            $phone = $_POST['phone'];
 
-            $insert_order_sql = "INSERT INTO orders (user_id, total_amount, status) VALUES ($user_id, $total_price, 'pending')";
+
+            $insert_order_sql = "INSERT INTO orders (user_id, total_amount, phone) VALUES ($user_id, $total_price, $phone)";
 
             if ($db->query($insert_order_sql) === TRUE) {
                 $clear_cart_sql = "DELETE FROM cart WHERE user_id = $user_id";
                 if ($db->query($clear_cart_sql) === TRUE) {
-                    header("Location: ../; Refresh: 5;");
+                    header("Refresh: 5;Location: ../;");
                     exit;
                 } else {
                     echo "Ошибка очистки: " . $db->error;

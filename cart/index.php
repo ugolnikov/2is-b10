@@ -139,7 +139,8 @@ require('../static/config.php');
             </form>";
             echo "<p>Общая стоимость:" . $total_price . "₽</p>";
             echo "<form action='order.php' method='post'>";
-            echo "<input type='text' placeholder='Номер телефона' required>";
+            echo "<input type='text' name='phone'
+            id='phone' placeholder='Номер телефона' required>";
             echo "<br><button type='submit'>Оформить заказ</button>";
             echo "</form>";
         } else {
