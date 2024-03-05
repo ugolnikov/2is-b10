@@ -6,10 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $user_id = $_SESSION['user_id'];
         $service_id = $_POST['service_id'];
+        $price = $_POST['price'];
 
-        $quantity = 1;
-
-        $sql = "INSERT INTO cart (user_id, service_id, quantity) VALUES ($user_id, $service_id, $quantity)";
+        $sql = "INSERT INTO cart (user_id, service_id, price) VALUES ($user_id, $service_id, $price)";
 
         if ($db->query($sql) === TRUE) {
             header("Location: ../cart");
@@ -117,6 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li>Одно занятие (60 минут) - 3000 рублей</li>
 
             <input type="hidden" name="service_id" value="1">
+            <input type="hidden" name="price" value="3000">
             <input type="submit" value="Добавить в корзину">
         </form>
         <form action="" method="post">
@@ -127,6 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li>Одно занятие (60 минут) - 1500 рублей с ученика</li>
 
             <input type="hidden" name="service_id" value="2">
+            <input type="hidden" name="price" value="1500">
             <input type="submit" value="Добавить в корзину">
         </form>
         <form action="" method="post">
@@ -135,6 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p>Обучение технике, тактике и стратегии для участия в соревнованиях на региональном, национальном и международном уровнях.</p>
             <li>Индивидуальная подготовка (60 минут) - 3500 рублей</li>
             <input type="hidden" name="service_id" value="3">
+            <input type="hidden" name="price" value="3500">
             <input type="submit" value="Добавить в корзину">
         </form>
     </div>
@@ -146,6 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li>Летний тренировочный лагерь (неделя) - 25000 рублей с ученика</li>
             <li>Зимний тренировочный лагерь (неделя) - 30000 рублей с ученика</li>
             <input type="hidden" name="service_id" value="4">
+            <input type="hidden" name="price" value="25000">
             <input type="submit" value="Добавить в корзину">
         </form>
         <form action="" method="post">
@@ -154,6 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p>Программы укрепления физической формы, рекомендации по питанию и забота о здоровье для улучшения спортивных результатов.</p>
             <li>Индивидуальная программа (4 недели) - 10000 рублей</li>
             <input type="hidden" name="service_id" value="5">
+            <input type="hidden" name="price" value="10000">
             <input type="submit" value="Добавить в корзину">
         </form>
         <form action="" method="post">
@@ -162,6 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p>Регулярные медицинские осмотры, физиотерапевтические процедуры и консультации специалистов для поддержания здоровья спортсменов.</p>
             <li>Одно посещение медицинского специалиста - 2000 рублей</li>
             <input type="hidden" name="service_id" value="6">
+            <input type="hidden" name="price" value="2000">
             <input type="submit" value="Добавить в корзину">
         </form>
     </div>

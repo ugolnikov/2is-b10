@@ -14,7 +14,6 @@ require('../static/config.php');
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Стили для прелоадера */
         .preloader {
             position: fixed;
             left: 0;
@@ -29,25 +28,19 @@ require('../static/config.php');
             opacity: 1;
             transition: opacity 0.3s ease;
             pointer-events: none;
-            /* Пропускать события указателя мыши через элемент */
         }
 
-        /* Скрытие прелоадера при выделении текста */
         ::selection {
             background-color: transparent;
-            /* Сделать выделенный текст прозрачным */
         }
 
         .preloader .loader {
             border: 8px solid #f3f3f3;
-            /* Цвет кружка */
             border-top: 8px solid #3498db;
-            /* Цвет кружка при загрузке */
             border-radius: 50%;
             width: 50px;
             height: 50px;
             animation: spin 1s linear infinite;
-            /* Анимация кручения */
         }
 
         @keyframes spin {
@@ -60,7 +53,6 @@ require('../static/config.php');
             }
         }
 
-        /* Скрыть прелоадер после загрузки страницы */
         .loaded .preloader {
             opacity: 0;
         }
@@ -92,16 +84,16 @@ require('../static/config.php');
     <?
     $user_id = $_SESSION['user_id'];
 
-    $sql = "SELECT id, service_id, quantity FROM cart WHERE user_id = $user_id";
+    $sql = "SELECT id, service_id, price FROM cart WHERE user_id = $user_id";
     $result = $db->query($sql);
 
     if ($result->num_rows > 0) {
         echo "<h2>Содержимое корзины:</h2>";
-        echo "<table border='1'>";
-        echo "<tr><th>Название услуги</th><th>Количество</th></tr>";
+        echo "<table border='1' cellspacing='0'>";
+        echo "<tr><th>Название услуги</th><th>Цена</th></tr>";
         while ($row = $result->fetch_assoc()) {
             $service_id = $row["service_id"];
-            $quantity = $row["quantity"];
+            $price = $row["price"];
 
 
             $service_name = "";
@@ -128,16 +120,25 @@ require('../static/config.php');
 
             echo "<tr>";
             echo "<td>" . $service_name . "</td>";
-            echo "<td>" . $quantity . "</td>";
+            echo "<td>" . $price . "₽</td>";
             echo "</tr>";
         }
         echo "</table>";
+        $total_sql = "SELECT SUM(price) AS total FROM cart WHERE user_id = $user_id";
+        $total_result = $db->query($total_sql);
+        if ($total_result->num_rows > 0) {
+            $total_row = $total_result->fetch_assoc();
+            $total_price = $total_row['total'];
+        }
     } else {
         echo "Корзина пуста";
     }
     $db->close();
     ?>
 
+    <p>Сумма всех услуг: <?php echo $total_price; ?>₽</p>
+    <input type="text" placeholder="Номер телефона">
+    <button>Оформить заказ</button>
 
 
     <!-- Футер -->
