@@ -1,8 +1,8 @@
 <?
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-include("../static/session.php");
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
+// include("../static/session.php");
 ?>
 
 <!DOCTYPE html>
@@ -90,26 +90,63 @@ include("../static/session.php");
     </div>
 
     <!-- Услуги -->
-    <h2>Выберите услугу:</h2>
-    <form action="" method="post">
-        <img src="service1.jpg" alt="Услуга 1">
-        <p>Услуга 1</p>
-        <input type="hidden" name="service_id" value="1">
-        <input type="submit" value="Добавить в корзину">
-    </form>
-    <form action="" method="post">
-        <img src="service2.jpg" alt="Услуга 2">
-        <p>Услуга 2</p>
-        <input type="hidden" name="service_id" value="2">
-        <input type="submit" value="Добавить в корзину">
-    </form>
-    <form action="" method="post">
-        <img src="service3.jpg" alt="Услуга 3">
-        <p>Услуга 3</p>
-        <input type="hidden" name="service_id" value="3">
-        <input type="submit" value="Добавить в корзину">
-    </form>
+    <h2 style="text-align: center;">Услуги:</h2>
+    <div class="services">
+        <form action="" method="post">
+            <img src="./service1.png" alt="Услуга 1">
+            <h3>Индивидуальные занятия с тренером</h3>
+            <p>Персональные тренировки, нацеленные на развитие индивидуальных навыков плавания и подготовку к соревнованиям.</p>
+            <li>Одно занятие (60 минут) - 3000 рублей</li>
 
+            <input type="hidden" name="service_id" value="1">
+            <input type="submit" value="Добавить в корзину">
+        </form>
+        <form action="" method="post">
+            <img src="./service2.jpg" alt="Услуга 2">
+            <h3>Групповые тренировки по дисциплинам</h3>
+            <p>Разделение учеников на группы в соответствии с их уровнем подготовки и тренировочными целями (например, баттерфляй, кроль, спиной и прочее).</p>
+
+            <li>Одно занятие (60 минут) - 1500 рублей с ученика</li>
+
+            <input type="hidden" name="service_id" value="2">
+            <input type="submit" value="Добавить в корзину">
+        </form>
+        <form action="" method="post">
+            <img src="./service3.jpg" alt="Услуга 3">
+            <h3>Подготовка к соревнованиям</h3>
+            <p>Обучение технике, тактике и стратегии для участия в соревнованиях на региональном, национальном и международном уровнях.</p>
+            <li>Индивидуальная подготовка (60 минут) - 3500 рублей</li>
+            <input type="hidden" name="service_id" value="3">
+            <input type="submit" value="Добавить в корзину">
+        </form>
+    </div>
+    <div class="services">
+        <form action="" method="post">
+            <img src="./service4.jpg" alt="Услуга 4">
+            <h3>Тренировочные лагеря и интенсивные курсы</h3>
+            <p>Организация летних и зимних тренировочных лагерей для интенсивного обучения и подготовки к соревнованиям.</p>
+            <li>Летний тренировочный лагерь (неделя) - 25000 рублей с ученика</li>
+            <li>Зимний тренировочный лагерь (неделя) - 30000 рублей с ученика</li>
+            <input type="hidden" name="service_id" value="4">
+            <input type="submit" value="Добавить в корзину">
+        </form>
+        <form action="" method="post">
+            <img src="./service5.jpg" alt="Услуга 5">
+            <h3>Физическая подготовка и здоровье</h3>
+            <p>Программы укрепления физической формы, рекомендации по питанию и забота о здоровье для улучшения спортивных результатов.</p>
+            <li>Индивидуальная программа (4 недели) - 10000 рублей</li>
+            <input type="hidden" name="service_id" value="5">
+            <input type="submit" value="Добавить в корзину">
+        </form>
+        <form action="" method="post">
+            <img src="./service6.jpg" alt="Услуга 6">
+            <h3>Медицинский контроль и сопровождение</h3>
+            <p>Регулярные медицинские осмотры, физиотерапевтические процедуры и консультации специалистов для поддержания здоровья спортсменов.</p>
+            <li>Одно посещение медицинского специалиста - 2000 рублей</li>
+            <input type="hidden" name="service_id" value="6">
+            <input type="submit" value="Добавить в корзину">
+        </form>
+    </div>
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_SESSION['login_user'])) {
@@ -139,7 +176,7 @@ include("../static/session.php");
 
 
     <!-- Футер -->
-    <div class="footer" style="position:fixed; left:0px; bottom:0px; height:150px; width:100%; margin-top: 150px;">
+    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: 250px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>

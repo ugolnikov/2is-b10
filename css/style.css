@@ -550,3 +550,45 @@ body>div>div>div>p:nth-child(3)>a {
   flex-direction: column;
   margin-left: 4rem;
 }
+
+
+.services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.services form {
+  width: 25%;
+  height: fit-content;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.services form img {
+  height: 200px;
+  width: 350px;
+  object-fit: cover;
+}
+
+.services form input {
+  margin-top: 2rem;
+  font-size: large;
+  width: 40%;
+  border: none;
+  background-color: #193441;
+  color: #ecf4f7;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.services form input:hover {
+  color: #193441;
+  background-color: #ecf4f7;
+  outline: 1px solid #193441;
+}
