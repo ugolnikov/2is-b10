@@ -1,7 +1,16 @@
 <?
 require('../static/session.php');
 require('../static/config.php');
+if ((isset($_POST['clear_cart'])) && ($_SERVER['REQUEST_METHOD'] == 'POST')) {
+    $clear_sql = "DELETE FROM cart WHERE user_id = $user_id";
+    if ($db->query($clear_sql) === TRUE) {
+        header('Refresh: 2;');
+        echo "Корзина успешно очищена";
+    }
+}
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -130,15 +139,20 @@ require('../static/config.php');
             $total_row = $total_result->fetch_assoc();
             $total_price = $total_row['total'];
         }
+        echo "<form action='' method='post'>
+    <input type='hidden' name='clear_cart' value='1'>
+    <button type='submit'>Очистить корзину</button></form>";
+        echo "<p>Общая стоимость: <?php echo $total_price; ?>₽</p>";
+        echo "<input type='text' placeholder='Номер телефона'>";
+        echo "<button>Оформить заказ</button>";
     } else {
         echo "Корзина пуста";
     }
-    $db->close();
     ?>
 
-    <p>Сумма всех услуг: <?php echo $total_price; ?>₽</p>
-    <input type="text" placeholder="Номер телефона">
-    <button>Оформить заказ</button>
+
+
+
 
 
     <!-- Футер -->
