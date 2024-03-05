@@ -65,7 +65,7 @@
     <div class="header">
         <a href="/"><img src="../static/logo.png" alt="Logo" class="logo"></a>
         <ul>
-            <li><a href="../services">Услуги</a></li>
+            <li><a href="../services" class="btn-header">Услуги</a></li>
             <li><a href="../about" class="btn-header">О нас</a></li>
             <li><a href="../news" class="btn-header">Новости</a></li>
             <li><a href="../contacts" class="btn-header">Контакты</a></li>
@@ -132,13 +132,35 @@
                     <path fill="currentColor" d="M13 6h10v2H13z" class="clr-i-outline clr-i-outline-path-16" />
                     <path fill="none" d="M0 0h36v36H0z" />
                 </svg>
-                <h2 style="
-    margin-bottom: 14px;
-    margin-top: 20px;">
+                <h2 style="margin-bottom: 14px; margin-top: 20px;">
                     Гибкий график занятий.
                 </h2>
                 <p>
                     Возможность выбора удобного расписания занятий для различных возрастов и занятых родителей.
+                </p>
+            </div>
+        </div>
+        <div class="blocks" style="margin-top: 80px; gap: 10px;">
+            <div class="block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="board-icon">
+                    <path fill="none" stroke="currentColor" stroke-width="2" d="M16 16c0-1.105-3.134-2-7-2s-7 .895-7 2s3.134 2 7 2s7-.895 7-2ZM2 16v4.937C2 22.077 5.134 23 9 23s7-.924 7-2.063V16M9 5c-4.418 0-8 .895-8 2s3.582 2 8 2M1 7v5c0 1.013 3.582 2 8 2M23 4c0-1.105-3.1-2-6.923-2c-3.824 0-6.923.895-6.923 2s3.1 2 6.923 2S23 5.105 23 4Zm-7 12c3.824 0 7-.987 7-2V4M9.154 4v10.166M9 9c0 1.013 3.253 2 7.077 2C19.9 11 23 10.013 23 9" />
+                </svg>
+                <h2 style="margin-bottom: 14px; margin-top: 20px;">
+                    Результат без лишних затрат.
+                </h2>
+                <p>
+                    Наши цены — приятный сюрприз!
+                </p>
+            </div>
+            <div class="block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48" class="board-icon">
+                    <path fill="currentColor" d="M24.865 4.348a1.25 1.25 0 0 0-1.73 0c-2.759 2.643-6.685 4.077-10.037 4.84c-1.66.376-3.139.58-4.202.69A29.035 29.035 0 0 1 7.242 10H7.22A1.25 1.25 0 0 0 6 11.25v9.5c0 4.837 1.243 9.658 4.098 13.775c2.861 4.126 7.29 7.469 13.529 9.418c.243.076.503.076.746 0C36.94 40.016 42 30.497 42 21v-9.75A1.25 1.25 0 0 0 40.78 10h-.022l-.08-.003a29.03 29.03 0 0 1-1.574-.12a35.655 35.655 0 0 1-4.202-.69c-3.353-.762-7.279-2.196-10.037-4.84" />
+                </svg>
+                <h2 style="margin-bottom: 14px; margin-top: 20px;">
+                    Безопасность на первом месте.
+                </h2>
+                <p>
+                    В нашей школе плавания мы ценим вашу безопасность так же, как и ваши навыки в воде!
                 </p>
             </div>
         </div>

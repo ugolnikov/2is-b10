@@ -129,6 +129,12 @@ a:any-link {
 
 .about-board {
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  flex-direction: column;
 }
 
 .about-board h1 {
@@ -137,11 +143,12 @@ a:any-link {
 }
 
 .blocks {
+  width: 85%;
   display: flex;
   margin: auto 0;
   vertical-align: middle;
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: center;
   /* background-color: #ccf1ff; */
 }
 

@@ -76,7 +76,7 @@ include("../static/config.php");
     <div class="header">
         <a href="/"><img src="../static/logo.png" alt="Logo" class="logo"></a>
         <ul>
-            <li><a href="../services">Услуги</a></li>
+            <li><a href="../services" class="btn-header">Услуги</a></li>
             <li><a href="../about" class="btn-header">О нас</a></li>
             <li><a href="../news" class="btn-header">Новости</a></li>
             <li><a href="../contacts" class="btn-header">Контакты</a></li>
