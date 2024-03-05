@@ -36,7 +36,7 @@ require('../static/session.php');
       <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
     </div>
     <div class="right-bar">
-      <h1 style="text-align: center;">Добро пожаловать - <?php echo $login_session; ?></h1>
+      <h1 style="margin: auto;display: flex;height: 100vh;text-align: center;align-content: center;justify-content: center;align-items: center;">Добро пожаловать - <?php echo $login_session; ?></h1>
       <iframe src="" frameborder="0"></iframe>
     </div>
   </div>
@@ -44,7 +44,7 @@ require('../static/session.php');
 
 
   <!-- Footer -->
-  <div class="footer" style="position: relative;top: 150px;left:0px;bottom:0px;height:150px;width:100%;margin-top: 300px;">
+  <div class="footer" style="position: relative;top: 100px;left:0px;bottom:0px;height:150px;width:100%;">
     <div class="text">
       Созданно: <br>Угольников Д. О. <b>2-ИС</b>
     </div>
@@ -64,6 +64,31 @@ require('../static/session.php');
         Обратная связь
       </a>
     </div>
+  </div>
+
+  <div class="popup__bg">
+    <form class="popup" action="./feedback_send.php" method="post">
+      <img src="/static/close.svg" class="close-popup" alt="close">
+      <label>
+        <input type="text" name="name" id="name">
+        <div class="label__text">
+          Ваше имя
+        </div>
+      </label>
+      <label>
+        <input type="tel" name="tel" id="tel">
+        <div class="label__text">
+          Ваш телефон
+        </div>
+      </label>
+      <label>
+        <textarea name="message" id="message"></textarea>
+        <div class="label__text">
+          Ваше сообщение
+        </div>
+      </label>
+      <button type="submit">Отправить</button>
+    </form>
   </div>
 </body>
 

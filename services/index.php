@@ -1,17 +1,76 @@
-<?php
-require('../static/session.php');
+<?
+include("../static/session.php");
 ?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СТАРТ | Администратор</title>
-    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <title>СТАРТ | Услуги</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Стили для прелоадера */
+        .preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            /* Пропускать события указателя мыши через элемент */
+        }
+
+        /* Скрытие прелоадера при выделении текста */
+        ::selection {
+            background-color: transparent;
+            /* Сделать выделенный текст прозрачным */
+        }
+
+        .preloader .loader {
+            border: 8px solid #f3f3f3;
+            /* Цвет кружка */
+            border-top: 8px solid #3498db;
+            /* Цвет кружка при загрузке */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            /* Анимация кручения */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Скрыть прелоадер после загрузки страницы */
+        .loaded .preloader {
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
     <!-- Header -->
     <div class="header">
         <a href="/"><img src="../static/logo.png" alt="Logo" class="logo"></a>
@@ -27,27 +86,55 @@ require('../static/session.php');
             </svg></a>
     </div>
 
-
-
-    <div class="lk">
-        <div class="left-bar">
-            <h1 style="text-align: center;">Панель управления администратора</h1> <br> <br> <br>
-            <h2 style="text-align: center;">Добро пожаловать, <?php echo $login_session; ?></h2>
-
-            <a href="./news_admin/">Управление новостями</a>
-            <a href="./feedback/">Обращения</a>
-
-            <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
+    <!-- Услуги -->
+    <h2>Выберите услугу:</h2>
+    <form action="" method="post">
+        <div class="service">
+            <img src="service1.jpg" alt="Услуга 1">
+            <p>Услуга 1</p>
+            <input type="hidden" name="service_id" value="1">
+            <input type="submit" value="Добавить в корзину">
         </div>
-        <div class="right-bar">
-            <p style='display: flex; align-items: center; justify-content: center; align-content: center; flex-wrap: nowrap; height: 60%;'> <?php echo date("d/m/Y"); ?></p>
+        <div class="service">
+            <img src="service2.jpg" alt="Услуга 2">
+            <p>Услуга 2</p>
+            <input type="hidden" name="service_id" value="2">
+            <input type="submit" value="Добавить в корзину">
         </div>
-    </div>
+        <div class="service">
+            <img src="service3.jpg" alt="Услуга 3">
+            <p>Услуга 3</p>
+            <input type="hidden" name="service_id" value="3">
+            <input type="submit" value="Добавить в корзину">
+        </div>
+    </form>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_SESSION['login_user'])) {
+
+            $user_id = $_SESSION['user_id'];
+            $service_id = $_POST['service_id'];
+            $quantity = 1;
+
+            $sql = "INSERT INTO cart (user_id, service_id, quantity) VALUES ($user_id, $service_id, $quantity)";
+
+            if ($db->query($sql) === TRUE) {
+                header("URL = ../cart");
+            } else {
+                echo "Ошибка при добавлении услуги в корзину: " . $db->error;
+            }
+        } else {
+            header("URL =../login");
+        }
+    }
+
+    ?>
 
 
 
-    <!-- Footer -->
-    <div class="footer" style="position: relative;left:0px;bottom:0px;height:150px;width:100%;margin-top: 50px;">
+
+    <!-- Футер -->
+    <div class="footer" style="position:fixed; left:0px; bottom:0px; height:150px; width:100%; margin-top: 150px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>
@@ -70,7 +157,7 @@ require('../static/session.php');
     </div>
 
     <div class="popup__bg">
-        <form class="popup" action="./feedback_send.php" method="post">
+        <form class="popup" action="../feedback_send.php" method="post">
             <img src="/static/close.svg" class="close-popup" alt="close">
             <label>
                 <input type="text" name="name" id="name">
@@ -93,6 +180,18 @@ require('../static/session.php');
             <button type="submit">Отправить</button>
         </form>
     </div>
+
+
+    <script>
+        window.addEventListener('load', function() {
+            // setTimeout(function() {
+            document.body.classList.add('loaded');
+            // }, 500); 
+        });
+    </script>
+
+    <script src="../static/script.js" defer></script>
 </body>
+
 
 </html>

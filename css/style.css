@@ -511,6 +511,7 @@ body>div>div>div>p:nth-child(3)>a {
 }
 
 .left-bar {
+  margin-top: 32px;
   width: 17%;
   height: 100%;
   display: flex;
