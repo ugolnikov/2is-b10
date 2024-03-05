@@ -1,4 +1,7 @@
 <?
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 include("../static/session.php");
 ?>
 
@@ -67,9 +70,9 @@ include("../static/session.php");
 
 <body>
     <!-- Прелоадер -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header -->
     <div class="header">
