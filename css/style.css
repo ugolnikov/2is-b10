@@ -545,6 +545,12 @@ body>div>div>div>p:nth-child(3)>a {
   align-items: center;
 }
 
+.main-news_img{
+  width: 250px;
+  height: auto!important;
+  border-radius: 10px;
+}
+
 .text_next_photo {
   display: flex;
   flex-direction: column;

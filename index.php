@@ -1,3 +1,6 @@
+<?
+include("static/config.php");
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -193,6 +196,145 @@
     </div>
 
 
+
+    <div class="main-news">
+        <h3 style="text-align: center; margin-top: 2rem;">Новости</h3>
+        <?
+    $query = "SELECT * FROM news ORDER BY date_added DESC LIMIT 3";
+
+    $result = $db->query($query);
+    echo "<div class='main-news-blocks' style='
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;'>";
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='main-news-block' style='
+            padding: 1rem;
+            margin: 1rem;
+            display: flex;
+            flex-wrap: nowrap;
+            align-content: center;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;'>";
+            if ($row['photo_url'] != 'нет фото') {
+                echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'>";
+            } else {
+                echo "<div class='main-news_img'><p>Фото отсутствует</p></div>";
+            }
+
+            echo "<div class='main-text_next_photo'>";
+            echo "<h2>" . $row['title'] . "</h2>";
+            echo "<p>" . $row['content'] . "</p>";
+            echo "</div> <br> </div>";
+        }
+    } else {
+        echo "<p style='
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: nowrap;
+            height: 60%;'>
+            
+            Нет новостей
+            </p>";
+    }
+    echo "</div>";
+    ?>
+    </div>
+
+
+    <h3  style="text-align: center; margin-top: 2rem;">Услуги</h3>
+    <div class="services">
+        
+        <form action="services_send.php" method="post">
+            <img src="./services/service1.png" alt="Услуга 1">
+            <h3>Индивидуальные занятия с тренером</h3>
+            <p>Персональные тренировки, нацеленные на развитие индивидуальных навыков плавания и подготовку к соревнованиям.</p>
+            <li>Одно занятие (60 минут) - 3000 рублей</li>
+
+            <input type="hidden" name="service_id" value="1">
+            <input type="hidden" name="price" value="3000">
+            <input style="width: 100%!important;" type="submit" value="Добавить в корзину">
+        </form>
+        <form action="services_send.php" method="post">
+            <img src="./services/service2.jpg" alt="Услуга 2">
+            <h3>Групповые тренировки по дисциплинам</h3>
+            <p>Разделение учеников на группы в соответствии с их уровнем подготовки и тренировочными целями (например, баттерфляй, кроль, спиной и прочее).</p>
+
+            <li>Одно занятие (60 минут) - 1500 рублей с ученика</li>
+
+            <input type="hidden" name="service_id" value="2">
+            <input type="hidden" name="price" value="1500">
+            <input style="width: 100%!important;" type="submit" value="Добавить в корзину">
+        </form>
+        <form action="services_send.php" method="post">
+            <img src="./services/service3.jpg" alt="Услуга 3">
+            <h3>Подготовка к соревнованиям</h3>
+            <p>Обучение технике, тактике и стратегии для участия в соревнованиях на региональном, национальном и международном уровнях.</p>
+            <li>Индивидуальная подготовка (60 минут) - 3500 рублей</li>
+            <input type="hidden" name="service_id" value="3">
+            <input type="hidden" name="price" value="3500">
+            <input style="width: 100%!important;" type="submit" value="Добавить в корзину">
+        </form>
+    </div>
+
+
+
+
+    <div class="trainers">
+        <h3 style="text-align: center; margin-top: 2rem;">Тренера</h3>
+        <?
+        $query = "SELECT * FROM trainer LIMIT 4";
+
+        $result = $db->query($query);
+        echo "<div class='main-trainers-blocks' style='
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;'>";
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='main-trainers-block' style='
+                padding: 1rem;
+                margin: 1rem;
+                display: flex;
+                flex-wrap: nowrap;
+                align-content: center;
+                flex-direction: column;
+                align-items: center;'>";
+                if ($row['photo_url'] != 'нет фото') {
+                    echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='main-news_img'>";
+                } else {
+                    echo "<div class='main-news_img'><p>Фото отсутствует</p></div>";
+                }
+
+            echo "<div class='main-text_next_photo'>";
+            echo "<p style='font-size: large;'>" . $row['secondname'] ."  ". $row['firstname']. "</p>";
+            echo "</div> <br> </div>";
+        }
+            } else {
+                echo "<p style='
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                flex-wrap: nowrap;
+                height: 60%;'>
+                Нет тренеров
+                </p>";
+    }
+    echo "</div>";
+    $db->close();
+    ?>
+    </div>
+
+
     <div class="where-is-me">
         <div class="contacts">
             <h3>О нас</h3>
@@ -265,6 +407,14 @@
             document.body.classList.add('loaded');
             // }, 500); 
         });
+        const elements = document.getElementsByClassName("main-news-block");
+        for (const element of elements) {
+            element.addEventListener('click', () => {
+            window.location.href = "/news";
+        });}
+        
+
+
     </script>
 
     <script src="../static/script.js" defer></script>

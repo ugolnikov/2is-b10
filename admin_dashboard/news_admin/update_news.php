@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
     }
 
     $db->close();
-    header("Location: ../admin_dashboard");
+    header("Location: ../");
 } else {
     echo "Ошибка: данные формы не были отправлены правильно.";
-    header("Location: ../admin_dashboard");
+    header("Location: ../");
 }

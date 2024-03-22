@@ -36,6 +36,7 @@ require('../static/session.php');
 
             <a href="./news_admin/">Управление новостями</a>
             <a href="./feedback/">Обращения</a>
+            <a href="./trainers">Тренера</a>
 
             <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
         </div>

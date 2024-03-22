@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
         echo "<input type='text' name='photo_url' value='" . $row['photo_url'] . "' placeholder='Ссылка к фото'><br>";
         echo "<input type='submit' value='Обновить новость'>";
         echo "</form>";
-        echo "<a href='../admin_dashboard'>Вернуться назад</a>";
+        echo "<a href='../'>Вернуться назад</a>";
     } else {
         echo "Новость не найдена!";
     }

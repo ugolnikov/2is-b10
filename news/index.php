@@ -87,7 +87,14 @@ require_once("../static/config.php");
     </div>
 
     <!-- Блоки новостей -->
-
+        <div class="news-bg" style="
+        margin-top: 16px;
+    background-image: url('../static/water-background 1.png');
+    top: -16px;
+    position: relative;
+    background-size: cover;
+">
+<hr><br>
     <?
     $query = "SELECT * FROM news ORDER BY date_added DESC";
 
@@ -95,6 +102,8 @@ require_once("../static/config.php");
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<div class='news-block' style='
+            border-radius: 15px;
+            background-color:#ffffff8a;
             padding: 1rem;
             margin: 1rem;
             display: flex;
@@ -129,7 +138,7 @@ require_once("../static/config.php");
     }
     $db->close();
     ?>
-
+</div>
 
 
     <!-- Футер -->
