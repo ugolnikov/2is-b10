@@ -1,7 +1,7 @@
 <?php
 require('../static/session.php');
 ?>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
