@@ -75,19 +75,18 @@ require('../../static/session.php');
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='news-block' style='
-    padding: 1rem;
-    margin: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-'>";
-                    echo "<h2>" . $row['title'] . "</h2>";
-                    echo "<p>" . $row['content'] . "</p>";
+                        padding: 1rem;
+                        margin: 1rem;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        align-content: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    '>";
+                    echo "<p>Имя" . $row['firstname'] . "</p>";
+                    echo "<p>Фамилия" . $row['secondname'] . "</p>";
                     echo "<p>Фото: <br><img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'> </p>";
-                    echo "<p>Дата добавления: " . $row['date_added'] . "</p>";
 
                     echo "<form action='delete_news.php' method='post'>";
                     echo "<input type='hidden' name='news_id' value='" . $row['id'] . "'>";
