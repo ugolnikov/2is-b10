@@ -2,18 +2,18 @@
 require('../../static/session.php');
 require("../../static/config.php");
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['news_id'])) {
-    $news_id = $_POST['news_id'];
-    $title = $_POST['title'];
-    $content = $_POST['content'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['train_id'])) {
+    $train_id = $_POST['train_id'];
+    $firstname = $_POST['firstname'];
+    $secondname = $_POST['secondname'];
     $photo_url = isset($_POST['photo_url']) ? $_POST['photo_url'] : 'нет фото';
 
-    $query = "UPDATE news SET title='$title', content='$content', photo_url='$photo_url' WHERE id='$news_id'";
+    $query = "UPDATE trainer SET firstname='$firstname', secondname='$secondname', photo_url='$photo_url' WHERE id='$train_id'";
 
     $result = $db->query($query);
 
     if ($result) {
-        echo "Новость успешно обновлена!";
+        echo "Тренер успешно обновлен!";
     } else {
         echo "Ошибка: " . $db->error;
     }

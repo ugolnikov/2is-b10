@@ -547,7 +547,7 @@ body>div>div>div>p:nth-child(3)>a {
 
 .main-news_img{
   width: 250px;
-  height: auto!important;
+  height: 333px;
   border-radius: 10px;
 }
 

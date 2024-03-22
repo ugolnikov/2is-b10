@@ -18,7 +18,7 @@ require('../../static/session.php');
         <ul>
             <li><a href="../../services" class="btn-header">Услуги</a></li>
             <li><a href="../../about" class="btn-header">О нас</a></li>
-            <li><a href="../../news" class="btn-header">Новости</a></li>
+            <li><a href="../../train" class="btn-header">Новости</a></li>
             <li><a href="../../contacts" class="btn-header">Контакты</a></li>
             <li><a href="../../dashboard" class="btn-header">Личный кабинет</a></li>
         </ul>
@@ -33,8 +33,8 @@ require('../../static/session.php');
         <div class="left-bar">
             <h1 style="text-align: center;">Добавление новостей</h1>
             <form action="" method="post" style="display: flex; flex-wrap: nowrap; flex-direction: column; align-items: center; justify-content: center; align-content: center;">
-                <input type="text" id="title" name="title" placeholder="Имя"><br>
-                <input type="text" id="title" name="title" placeholder="Фамилия"><br>
+                <input type="text" id="firstname" name="firstname" placeholder="Имя"><br>
+                <input type="text" id="secondname" name="secondname" placeholder="Фамилия"><br>
                 <input type="text" name="photo_url" id="photo_url" placeholder="Ссылка к фото"><br>
                 <input type="submit" value="Добавить тренера">
             </form>
@@ -74,7 +74,7 @@ require('../../static/session.php');
             $result = $db->query($query);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo "<div class='news-block' style='
+                    echo "<div class='train-block' style='
                         padding: 1rem;
                         margin: 1rem;
                         display: flex;
@@ -84,17 +84,17 @@ require('../../static/session.php');
                         flex-direction: column;
                         align-items: flex-start;
                     '>";
-                    echo "<p>Имя" . $row['firstname'] . "</p>";
-                    echo "<p>Фамилия" . $row['secondname'] . "</p>";
-                    echo "<p>Фото: <br><img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'> </p>";
+                    echo "<p>Имя: " . $row['firstname'] . "</p>";
+                    echo "<p>Фамилия: " . $row['secondname'] . "</p>";
+                    echo "<p>Фото: <br><img src=' " . $row['photo_url'] . "' alt='Photo' height=350px width=300px> </p>";
 
-                    echo "<form action='delete_news.php' method='post'>";
-                    echo "<input type='hidden' name='news_id' value='" . $row['id'] . "'>";
+                    echo "<form action='delete_train.php' method='post'>";
+                    echo "<input type='hidden' name='train_id' value='" . $row['id'] . "'>";
                     echo "<input type='submit' value='Удалить'>";
                     echo "</form>";
 
-                    echo "<form action='edit_news.php' method='post'>";
-                    echo "<input type='hidden' name='news_id' value='" . $row['id'] . "'>";
+                    echo "<form action='edit_train.php' method='post'>";
+                    echo "<input type='hidden' name='train_id' value='" . $row['id'] . "'>";
                     echo "<input type='submit' value='Редактировать'>";
                     echo "</form>";
 
