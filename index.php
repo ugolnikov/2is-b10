@@ -93,7 +93,6 @@ include("static/config.php");
 
     <!-- О нас -->
     <div class="about-board">
-        <h1>Наши преимущества</h1>
         <div class="blocks">
             <div class="block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="board-icon">
@@ -287,12 +286,13 @@ include("static/config.php");
 
 
     <div class="trainers">
-        <h3 style="text-align: center; margin-top: 2rem;">Тренера</h3>
+        <h3 style="text-align: center; margin-top: 2rem;">Тренеры</h3>
         <?
         $query = "SELECT * FROM trainer LIMIT 4";
 
         $result = $db->query($query);
         echo "<div class='main-trainers-blocks' style='
+        margin-top: 5rem;
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -343,11 +343,11 @@ include("static/config.php");
             <p>Возраста: от 5 до 18 лет</p>
             <h3>Контакты</h3>
             <p>Адрес: г.Пермь, ул. Пушкина, дом 107а</p>
-            <p>Телефон: +7 (342) 244-89-21</p>
+            <p>Телефон: <a href="+73422448921" style="color: black; text-decoration: underline">+7 (342) 244-89-21</a></p>
             <p>Время работы: С 9:00 до 17:00</p>
         </div>
         <div class="map">
-            <h3>Мы на карте</h3>
+            <h3 style="margin-bottom: 3rem;">Мы на карте</h3>
             <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/oniks/1064300558/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Оникс</a><a href="https://yandex.ru/maps/50/perm/category/college/184106236/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Колледж в Перми</a><a href="https://yandex.ru/maps/50/perm/category/further_education/184106162/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Дополнительное образование в Перми</a><iframe src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=56.221789%2C58.002929&mode=search&oid=1064300558&ol=biz&z=18.2" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
         </div>
     </div>

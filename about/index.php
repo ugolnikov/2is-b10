@@ -1,34 +1,10 @@
-<?
-include("../static/session.php");
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_SESSION['login_user'])) {
-        include('../static/config.php');
-
-        $user_id = $_SESSION['user_id'];
-        $service_id = $_POST['service_id'];
-        $price = $_POST['price'];
-
-        $sql = "INSERT INTO cart (user_id, service_id, price) VALUES ($user_id, $service_id, $price)";
-
-        if ($db->query($sql) === TRUE) {
-            header("Location: ../cart");
-            exit;
-        } else {
-            echo "Ошибка при добавлении услуги в корзину: " . $db->error;
-        }
-    } else {
-        header("Location: ../login");
-        exit;
-    }
-}
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СТАРТ | Услуги</title>
+    <title>СТАРТ | О нас</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
     <style>
@@ -82,6 +58,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .loaded .preloader {
             opacity: 0;
         }
+        .prize {
+            width: 20%;
+            height: 250px;
+            box-shadow: 2.5px 2.5px rgb(227 227 227);
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -107,76 +89,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 
     <!-- Услуги -->
-    <h2 style="text-align: center;">Услуги:</h2>
-    <div class="services">
-        <form action="" method="post">
-            <img src="./service1.png" alt="Услуга 1">
-            <h3>Индивидуальные занятия с тренером</h3>
-            <p>Персональные тренировки, нацеленные на развитие индивидуальных навыков плавания и подготовку к соревнованиям.</p>
-            <li>Одно занятие (60 минут) - 3000 рублей</li>
-
-            <input type="hidden" name="service_id" value="1">
-            <input type="hidden" name="price" value="3000">
-            <input type="submit" value="Добавить в корзину">
-        </form>
-        <form action="" method="post">
-            <img src="./service2.jpg" alt="Услуга 2">
-            <h3>Групповые тренировки по дисциплинам</h3>
-            <p>Разделение учеников на группы в соответствии с их уровнем подготовки и тренировочными целями (например, баттерфляй, кроль, спиной и прочее).</p>
-
-            <li>Одно занятие (60 минут) - 1500 рублей с ученика</li>
-
-            <input type="hidden" name="service_id" value="2">
-            <input type="hidden" name="price" value="1500">
-            <input type="submit" value="Добавить в корзину">
-        </form>
-        <form action="" method="post">
-            <img src="./service3.jpg" alt="Услуга 3">
-            <h3>Подготовка к соревнованиям</h3>
-            <p>Обучение технике, тактике и стратегии для участия в соревнованиях на региональном, национальном и международном уровнях.</p>
-            <li>Индивидуальная подготовка (60 минут) - 3500 рублей</li>
-            <input type="hidden" name="service_id" value="3">
-            <input type="hidden" name="price" value="3500">
-            <input type="submit" value="Добавить в корзину">
-        </form>
-    </div>
-    <div class="services">
-        <form action="" method="post">
-            <img src="./service4.jpg" alt="Услуга 4">
-            <h3>Тренировочные лагеря и интенсивные курсы</h3>
-            <p>Организация летних и зимних тренировочных лагерей для интенсивного обучения и подготовки к соревнованиям.</p>
-            <li>Летний тренировочный лагерь (неделя) - 25000 рублей с ученика</li>
-            <li>Зимний тренировочный лагерь (неделя) - 30000 рублей с ученика</li>
-            <input type="hidden" name="service_id" value="4">
-            <input type="hidden" name="price" value="25000">
-            <input type="submit" value="Добавить в корзину">
-        </form>
-        <form action="" method="post">
-            <img src="./service5.jpg" alt="Услуга 5">
-            <h3>Физическая подготовка и здоровье</h3>
-            <p>Программы укрепления физической формы, рекомендации по питанию и забота о здоровье для улучшения спортивных результатов.</p>
-            <li>Индивидуальная программа (4 недели) - 10000 рублей</li>
-            <input type="hidden" name="service_id" value="5">
-            <input type="hidden" name="price" value="10000">
-            <input type="submit" value="Добавить в корзину">
-        </form>
-        <form action="" method="post">
-            <img src="./service6.jpg" alt="Услуга 6">
-            <h3>Медицинский контроль и сопровождение</h3>
-            <p>Регулярные медицинские осмотры, физиотерапевтические процедуры и консультации специалистов для поддержания здоровья спортсменов.</p>
-            <li>Одно посещение медицинского специалиста - 2000 рублей</li>
-            <input type="hidden" name="service_id" value="6">
-            <input type="hidden" name="price" value="2000">
-            <input type="submit" value="Добавить в корзину">
-        </form>
-    </div>
+    <h2 style="text-align: center;">О нас</h2>
+    <div class="about-flex" style="display: flex; flex-direction: row; width: 80%;     margin: auto;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;">
+    <img src="../static/smiley-male-swimmer-inviting-photographer-to-swim_23-2148326742.avif" alt="About IMG" style="margin-right: 2rem; border-radius: 10px; box-shadow: 2.5px 2.5px rgb(227 227 227);">
+    <div class="about-text" style="line-height: 30px; text-align: justify;">
+    Добро пожаловать в школу плавания олимпийского резерва "СТАРТ"! Мы являемся ведущим центром подготовки юных спортсменов к достижению высших результатов в плавании.
+<br>
+Наша миссия заключается в развитии и совершенствовании спортивных навыков у детей и подростков, а также в воспитании дисциплины, выносливости и стремления к достижению своих целей.
+<br>
+В школе плавания "СТАРТ" мы предлагаем комплексную программу обучения, разработанную профессиональными тренерами с учетом современных методик и требований олимпийского спорта. Наши тренеры - это высококвалифицированные специалисты, имеющие многолетний опыт работы с детьми и молодежью. Они не только обучают технике плавания, но и внушают детям любовь к спорту, помогают развивать лидерские качества и самодисциплину.
+<br>
 
 
+</div></div>
+<div class="about-2" style="text-align: justify;
+    margin: auto;
+    display: flex;
+    margin-top: 2rem;
+    line-height: 25px;
+    width: 75%;">
+В "СТАРТ" мы стремимся к тому, чтобы каждый наш воспитанник мог раскрыть свой потенциал и достичь успеха на плавательных соревнованиях на любом уровне - от местных турниров до олимпийских игр. Мы гордимся достижениями наших учеников, которые регулярно побеждают на соревнованиях и достигают новых высот в своей спортивной карьере.
+<br>
+Наши ученики не только приобретают навыки плавания, но и формируют дружеские отношения, учатся работать в команде и преодолевать трудности вместе. В "СТАРТ" мы создаем атмосферу взаимопомощи и поддержки, где каждый ребенок чувствует себя важным и ценным членом нашей спортивной семьи.
+<br>
+Присоединяйтесь к нам в школе плавания олимпийского резерва "СТАРТ" и откройте для себя удивительный мир спорта, дружбы и достижений! Наша команда готова помочь вашему ребенку стать настоящим чемпионом в бассейне и в жизни. С нами ваша плавательная мечта обретет свой стартовый пункт к успеху!
+</div>
+
+
+        <div class="prizes" style="    display: flex;
+    margin: auto 2rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: nowrap;
+    margin-top: 2rem;">
+            <img src="../static/prize (1).jpg" alt="Prize" class="prize">
+            <img src="../static/prize (1).webp" alt="Prize" class="prize">
+            <img src="../static/prize (2).jpg" alt="Prize" class="prize">
+        </div>
 
 
 
     <!-- Футер -->
-    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: 250px;">
+    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: 100px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>

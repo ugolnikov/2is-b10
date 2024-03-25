@@ -31,14 +31,15 @@ require('../static/session.php');
 
     <div class="lk">
         <div class="left-bar">
-            <h1 style="text-align: center;">Панель управления администратора</h1> <br> <br> <br>
+            <h1 style="text-align: center;">Панель управления администратора</h1> <br>
             <h2 style="text-align: center;">Добро пожаловать, <?php echo $login_session; ?></h2>
 
-            <a href="./news_admin/">Управление новостями</a>
-            <a href="./feedback/">Обращения</a>
-            <a href="./trainers">Тренера</a>
+            <a href="./news_admin/" class="admin-btn">Управление новостями</a>
+            <a href="./users_data/" class="admin-btn" style="width: 80%;">Управление <br>данными пользователей</a>
+            <a href="./feedback/" class="admin-btn">Обращения</a>
+            <a href="./trainers" class="admin-btn">Тренера</a>
 
-            <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
+            <h3><a href="logout.php" style="text-decoration: underline;" class="admin-btn">Выйти из аккаунта</a></h3>
         </div>
         <div class="right-bar">
             <p style='display: flex; align-items: center; justify-content: center; align-content: center; flex-wrap: nowrap; height: 60%;'> <?php echo date("d/m/Y"); ?></p>
@@ -48,7 +49,7 @@ require('../static/session.php');
 
 
     <!-- Footer -->
-    <div class="footer" style="position: relative;left:0px;bottom:0px;height:150px;width:100%;margin-top: 50px;">
+    <div class="footer" style="position: relative;left:0px;bottom:0px;height:150px;width:100%;margin-top: 150px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>

@@ -1,5 +1,7 @@
-<?php
+<?
+error_reporting(-1);
 require('../static/session.php');
+$user_id = $_SESSION['user_id'];
 ?>
 <html lang="ru">
 
@@ -9,6 +11,7 @@ require('../static/session.php');
   <title>СТАРТ | Личный кабинет</title>
   <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../static/script.js" defer></script>
 </head>
 
 <body>
@@ -31,13 +34,25 @@ require('../static/session.php');
 
   <div class="lk">
     <div class="left-bar">
-      <a href="">Мои данные</a>
-      <a href="">Мои услуги</a>
-      <h3><a href="logout.php" style="text-decoration: underline;">Выйти из аккаунта</a></h3>
+      <a href="" class="admin-btn">Мои данные</a>
+      <h3><a href="logout.php" style="text-decoration: underline;" class="admin-btn">Выйти из аккаунта</a></h3>
     </div>
     <div class="right-bar">
-      <h1 style="margin: auto;display: flex;height: 100vh;text-align: center;align-content: center;justify-content: center;align-items: center;">Добро пожаловать - <?php echo $login_session; ?></h1>
-      <iframe src="" frameborder="0"></iframe>
+      <h1>Добро пожаловать - <?php echo $login_session; ?></h1>
+      <?
+      $sql = mysqli_query($db, "SELECT * FROM users WHERE id = '$user_id'");
+      ?>
+      <p>ID: <?php echo $user_id; ?></p>
+      <p>ФИО: <span id="fullName"><?php echo ($user['full_name'] ? $user['full_name'] : "не задано"); ?></span></p>
+      <p>Дата рождения: <span id="dob"><?php echo ($user['date_of_birth'] ? $user['date_of_birth'] : "не задано"); ?></span></p>
+      <p>Телефон: <span id="phone"><?php echo ($user['phone'] ? $user['phone'] : "не задано"); ?></span> </p>
+      <p>Email: <span id="email"><?php echo ($user['email'] ? $user['email'] : "не задано"); ?></span></p>
+
+      <div class="red-block">
+        <h3>Если у вас в полях стоит "не задано", то необходимо обратиться к модераторам через форму обратной связи.</h3>
+      </div>
+
+
     </div>
   </div>
 
@@ -90,6 +105,8 @@ require('../static/session.php');
       <button type="submit">Отправить</button>
     </form>
   </div>
+
+
 </body>
 
 </html>

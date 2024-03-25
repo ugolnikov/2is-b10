@@ -1,13 +1,13 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1711130894217,
+    "generatedTime": 1711132270081,
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state.json",
-            "size": 9368,
-            "hash": "95664a66ef5ef2db818ff5746f285512159628e3ea07895cf344b2dc5b3283b0"
+            "size": 10995,
+            "hash": "b76cd53aaa723d24fcfaac836e1707b4078ea490b69aad9c4e534268989b56cc"
         },
         {
             "type": "file",
@@ -20,6 +20,10 @@
             "name": "README.md",
             "size": 173,
             "hash": "c237a2760b59efc5d1190c2f6a92b63d25718a7b93100116cce10ae042a2c956"
+        },
+        {
+            "type": "folder",
+            "name": "about"
         },
         {
             "type": "folder",
@@ -76,6 +80,12 @@
             "name": "static"
         },
         {
+            "type": "file",
+            "name": "about/index.php",
+            "size": 12394,
+            "hash": "ec89795b18f0e17f34c55ea659edd1e86f1b084458a57ec39691ba77a73f58e3"
+        },
+        {
             "type": "folder",
             "name": "admin_dashboard/feedback"
         },
@@ -120,8 +130,8 @@
         {
             "type": "file",
             "name": "css/style.css",
-            "size": 9583,
-            "hash": "ff3a1891f8b0e5f82362ff4cce87deb94de27ee7a5899535f1c501155be01b96"
+            "size": 9574,
+            "hash": "8a62e75a2ac24bfe91d23184d4a4974557ae27374a7b6b65d93c916d37fd63c8"
         },
         {
             "type": "file",
@@ -227,15 +237,15 @@
         },
         {
             "type": "file",
-            "name": "static/photo (1).avif",
-            "size": 111376,
-            "hash": "bb062387527cf04b6290d28eea6014a37d9cea28f5cda076bf1b0fea32592d11"
-        },
-        {
-            "type": "file",
             "name": "static/photo (2).avif",
             "size": 181180,
             "hash": "c8fb95c9434e21bdf43ab05f949b1a42cfc71a8d02a0688a21d4c6082ee41a76"
+        },
+        {
+            "type": "file",
+            "name": "static/photo (1).avif",
+            "size": 111376,
+            "hash": "bb062387527cf04b6290d28eea6014a37d9cea28f5cda076bf1b0fea32592d11"
         },
         {
             "type": "file",
@@ -306,26 +316,26 @@
         {
             "type": "file",
             "name": "admin_dashboard/trainers/delete_train.php",
-            "size": 486,
-            "hash": "f06bae9fb9ce273b5d83721fec9110ac9f4105a6c8eec3578c550c8f1f47a9aa"
+            "size": 490,
+            "hash": "25e6555416ce6e975eadf664b0127080ae2d03597ef362845b57665ab9d6c060"
         },
         {
             "type": "file",
             "name": "admin_dashboard/trainers/edit_train.php",
-            "size": 1212,
-            "hash": "216eb899a9d1de8777d8419dbc29b761c177739b87ed245316df64ce2f2a3d51"
+            "size": 1194,
+            "hash": "effdc36876b0f43ec3fb1bd5d39e4990c5f900f35c4a8df71f204c40e973ad68"
         },
         {
             "type": "file",
             "name": "admin_dashboard/trainers/index.php",
-            "size": 5360,
-            "hash": "55d79b3b290cb7a696984780c564d7f11147c9ecf17ea0934e03471c7e08382a"
+            "size": 5396,
+            "hash": "e26ce015d41506a532c00699c0b335ddb09f86626bc6b97e9d78905a373822ad"
         },
         {
             "type": "file",
             "name": "admin_dashboard/trainers/update_train.php",
-            "size": 826,
-            "hash": "903fd4febd16091e5bc1773431dd300a403371796d808def173fd56a1ce6fd3b"
+            "size": 857,
+            "hash": "41cedaf5ec3373fc9bb172490e9a932783a86a47f5e084f674e926c59b550429"
         }
     ]
 }

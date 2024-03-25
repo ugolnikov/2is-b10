@@ -32,7 +32,7 @@
             <?
             echo date("Y-m-d H:i:s");;
             ?>
-            <h2><a href="../">Назад</a></h2>
+            <h2><a href="../" style="text-decoration: underline;">Назад</a></h2>
         </div>
         <div class="right-bar">
             <!-- Блоки заявок -->

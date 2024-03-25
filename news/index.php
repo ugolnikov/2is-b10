@@ -103,7 +103,7 @@ require_once("../static/config.php");
         while ($row = $result->fetch_assoc()) {
             echo "<div class='news-block' style='
             border-radius: 15px;
-            background-color:#ffffff8a;
+            background-color:#ffffffd9;
             padding: 1rem;
             margin: 1rem;
             display: flex;
@@ -142,7 +142,7 @@ require_once("../static/config.php");
 
 
     <!-- Футер -->
-    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%;">
+    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: -24px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>
