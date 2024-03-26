@@ -286,7 +286,7 @@ include("static/config.php");
 
 
     <div class="trainers">
-        <h3 style="text-align: center; margin-top: 2rem;">Главные тренеры</h3>
+        <h3 style="text-align: center; margin-top: 2rem;">Тренеры</h3>
         <?
         $query = "SELECT * FROM trainer";
 
@@ -297,7 +297,8 @@ include("static/config.php");
         flex-direction: row;
         width: 100%;
         align-items: center;
-        justify-content: space-evenly;'>";
+        justify-content: space-evenly;
+        flex-wrap: wrap;'>";
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='main-trainers-block' style='
