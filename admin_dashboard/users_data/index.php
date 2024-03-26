@@ -86,7 +86,8 @@ $db->close();
         }
 
         input[type="text"],
-        input[type="email"] {
+        input[type="email"],
+	input[type="date"] {
             width: 100%;
             padding: 8px;
             box-sizing: border-box;
