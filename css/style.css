@@ -537,9 +537,14 @@ body > div > div > div > p:nth-child(3) > a {
 }
 
 .main-news_img {
-	width: 250px;
-	height: 333px;
-	border-radius: 10px;
+	border: 1px solid #bdbdbd;
+   	width: 250px;
+    	height: 333px;
+    	border-radius: 10px;
+    	display: flex;
+    	justify-content: center;
+    	align-content: center;
+    	align-items: center;
 }
 
 .text_next_photo {
