@@ -286,7 +286,7 @@ include("static/config.php");
 
 
     <div class="trainers">
-        <h3 style="text-align: center; margin-top: 2rem;">Тренеры</h3>
+        <h3 style="text-align: center; margin-top: 2rem;">Главные тренеры</h3>
         <?
         $query = "SELECT * FROM trainer LIMIT 4";
 
