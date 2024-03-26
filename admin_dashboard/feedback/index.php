@@ -31,7 +31,7 @@
             <h1 style="text-align: center;">Все обращения</h1>
             <?
             date_default_timezone_set('Asia/Yekaterinburg');
-            echo date("Y-m-d H:i:s");
+            echo date("Y-m-d H:i:s")."<br>";
             echo "Часовой пояс: ".date_default_timezone_get();
             ?>
             <h2><a href="../" style="text-decoration: underline;">Назад</a></h2>
