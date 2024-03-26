@@ -1,13 +1,13 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1711132270081,
+    "generatedTime": 1711477793069,
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state.json",
-            "size": 10995,
-            "hash": "b76cd53aaa723d24fcfaac836e1707b4078ea490b69aad9c4e534268989b56cc"
+            "size": 11277,
+            "hash": "053f1932a05fb430b25131ab54541e68e9c7e3161a87f63f479c021d95136dd7"
         },
         {
             "type": "file",
@@ -35,6 +35,10 @@
         },
         {
             "type": "folder",
+            "name": "contacts"
+        },
+        {
+            "type": "folder",
             "name": "css"
         },
         {
@@ -50,8 +54,8 @@
         {
             "type": "file",
             "name": "index.php",
-            "size": 23084,
-            "hash": "d763bd34fb300f5d39b22c376c9e9612c907dfb7239b4aac1810726ee73192e2"
+            "size": 23182,
+            "hash": "9a45a209e9d663892881c14b56a00f79c2d84e3f7b0c7b2df95e0209cf3cd121"
         },
         {
             "type": "folder",
@@ -82,8 +86,8 @@
         {
             "type": "file",
             "name": "about/index.php",
-            "size": 12394,
-            "hash": "ec89795b18f0e17f34c55ea659edd1e86f1b084458a57ec39691ba77a73f58e3"
+            "size": 11440,
+            "hash": "045c91d0f6ad5004a8e05f93bdf2ce2580f0667d00a5ed1857bef5e7c55c32f6"
         },
         {
             "type": "folder",
@@ -92,8 +96,8 @@
         {
             "type": "file",
             "name": "admin_dashboard/index.php",
-            "size": 5799,
-            "hash": "0c6397decbb81bf0731964c47c07f953c2f45ac6127403fbca5d094c632a5b6b"
+            "size": 6007,
+            "hash": "425380ce96f436779214db11e44f464d129fda138ce8b992c815b2bc219f2b31"
         },
         {
             "type": "file",
@@ -110,10 +114,8 @@
             "name": "admin_dashboard/trainers"
         },
         {
-            "type": "file",
-            "name": "cart/index.php",
-            "size": 9434,
-            "hash": "50c1475364ba3f430f96aeb1b17c94e31d9d9bf7d3ce0789835fbcc670efe2a1"
+            "type": "folder",
+            "name": "admin_dashboard/users_data"
         },
         {
             "type": "file",
@@ -123,27 +125,45 @@
         },
         {
             "type": "file",
+            "name": "cart/index.php",
+            "size": 9434,
+            "hash": "50c1475364ba3f430f96aeb1b17c94e31d9d9bf7d3ce0789835fbcc670efe2a1"
+        },
+        {
+            "type": "file",
             "name": "cart/order.php",
             "size": 1706,
             "hash": "46b4ffce845e7467281c61eea25bbe0bb3c82f228d68ff27f0e6ff3099d19f53"
         },
         {
             "type": "file",
+            "name": "contacts/index.php",
+            "size": 9624,
+            "hash": "7f60229653ea5ae2a9a4c717bb1c881331cccb054b57f2016eed7797f211e801"
+        },
+        {
+            "type": "file",
             "name": "css/style.css",
-            "size": 9574,
-            "hash": "8a62e75a2ac24bfe91d23184d4a4974557ae27374a7b6b65d93c916d37fd63c8"
+            "size": 9708,
+            "hash": "717a339745168bac048e9eb5bc9654e3044145617efdc932c63274b17699b108"
         },
         {
             "type": "file",
             "name": "dashboard/index.php",
-            "size": 5154,
-            "hash": "52da82817ceb28a03016904022580a25ea252bbc1c23656ae4a4c43b82920f1d"
+            "size": 5976,
+            "hash": "88a09d9a99c04498e8a3c6d309c5dc05230d649dabfaddee6f2251b0c47b841b"
         },
         {
             "type": "file",
             "name": "dashboard/logout.php",
             "size": 83,
             "hash": "e596e5eed4dd3946e39f300d458175b50b8ed24e9719f81f6820c9524df72078"
+        },
+        {
+            "type": "file",
+            "name": "dashboard/update_user.php",
+            "size": 476,
+            "hash": "d8f5ac890ba23dd736d53a293b306c22910678f81670c52890979e30e178d47a"
         },
         {
             "type": "file",
@@ -154,8 +174,8 @@
         {
             "type": "file",
             "name": "news/index.php",
-            "size": 8680,
-            "hash": "c23468a80ed8ba7fa7b4930e320b2fcaec130ddacbcc5ee6980d4aa3b35723ae"
+            "size": 8699,
+            "hash": "3fc2b39e1f9b56ad3d63daf9666a02169397154e2c617d13565ec9dab17763fd"
         },
         {
             "type": "file",
@@ -214,8 +234,8 @@
         {
             "type": "file",
             "name": "static/config.php",
-            "size": 314,
-            "hash": "98dfbcb65f3e9387e674e6483f173803acb4597da1d49e2ae645228b1e1ab19b"
+            "size": 334,
+            "hash": "a74884b229b0559e808ed2fcb21bfb17b52a512ebd60d9b2440d457078b6451d"
         },
         {
             "type": "file",
@@ -237,21 +257,39 @@
         },
         {
             "type": "file",
-            "name": "static/photo (2).avif",
-            "size": 181180,
-            "hash": "c8fb95c9434e21bdf43ab05f949b1a42cfc71a8d02a0688a21d4c6082ee41a76"
-        },
-        {
-            "type": "file",
             "name": "static/photo (1).avif",
             "size": 111376,
             "hash": "bb062387527cf04b6290d28eea6014a37d9cea28f5cda076bf1b0fea32592d11"
         },
         {
             "type": "file",
+            "name": "static/photo (2).avif",
+            "size": 181180,
+            "hash": "c8fb95c9434e21bdf43ab05f949b1a42cfc71a8d02a0688a21d4c6082ee41a76"
+        },
+        {
+            "type": "file",
             "name": "static/photo (3).avif",
             "size": 58521,
             "hash": "a456e53002f8c0fdcd38f638b24768ff3d561341668e629f3c2169a27bdfcfec"
+        },
+        {
+            "type": "file",
+            "name": "static/prize (1).jpg",
+            "size": 144038,
+            "hash": "3230e8f6a9ca195302c9101a0097015c9bfec92ff334fded80b193ac2a892638"
+        },
+        {
+            "type": "file",
+            "name": "static/prize (1).webp",
+            "size": 27150,
+            "hash": "2816bc3d76d963e9eab9c789591db436d4bab193926dd397faba2a62e61bfc13"
+        },
+        {
+            "type": "file",
+            "name": "static/prize (2).jpg",
+            "size": 48223,
+            "hash": "beca81e3f8f860dacf7ec0fe32882e257524c68d783d355f8657e4be8e519dba"
         },
         {
             "type": "file",
@@ -262,8 +300,14 @@
         {
             "type": "file",
             "name": "static/session.php",
-            "size": 1026,
-            "hash": "df9b72f091ff912073ad294e661a98f5a1915b84de527e2794ceeb957226efc0"
+            "size": 1046,
+            "hash": "20252b0519a576ce54f79bad7c5600d61e4e8c8e1e7ae9580bd62ccf5ab2d7cd"
+        },
+        {
+            "type": "file",
+            "name": "static/smiley-male-swimmer-inviting-photographer-to-swim_23-2148326742.avif",
+            "size": 21352,
+            "hash": "6328d5bb090f4a29b5ba3344fd23cba172a7e1376751be0ab41288d28f410955"
         },
         {
             "type": "file",
@@ -274,8 +318,8 @@
         {
             "type": "file",
             "name": "static/water.mp4",
-            "size": 49865170,
-            "hash": "5a66306bc53fcdb3aa46c9feff057b01aa46c49725ac84211ecb355b7f82fcb1"
+            "size": 24117248,
+            "hash": "fa5cf04c19a3bbd68567db8910c84cec12f1380909d0c285056a6b02a36d047c"
         },
         {
             "type": "file",
@@ -286,8 +330,8 @@
         {
             "type": "file",
             "name": "admin_dashboard/feedback/index.php",
-            "size": 3368,
-            "hash": "8f7e646fc7f7384d416f9a25952c9165b788d40573ad3ad8bdf444fb9a176e56"
+            "size": 3546,
+            "hash": "d3af761e8d02fd8f9be20dd6657088edf6bb66655e79cfd69620ed8ba1296e2e"
         },
         {
             "type": "file",
@@ -336,6 +380,12 @@
             "name": "admin_dashboard/trainers/update_train.php",
             "size": 857,
             "hash": "41cedaf5ec3373fc9bb172490e9a932783a86a47f5e084f674e926c59b550429"
+        },
+        {
+            "type": "file",
+            "name": "admin_dashboard/users_data/index.php",
+            "size": 4819,
+            "hash": "cca331c173c78776626a1eb2dc842e33ddf2661f7c5cdc599dad7ff8d82f41ce"
         }
     ]
 }

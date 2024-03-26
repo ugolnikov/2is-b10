@@ -11,6 +11,8 @@ require_once("../static/config.php");
     <title>СТАРТ | Новости</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         /* Стили для прелоадера */
         .preloader {
@@ -72,36 +74,26 @@ require_once("../static/config.php");
     </div>
 
     <!-- Header -->
-    <div class="header">
-        <a href="/"><img src="../static/logo.png" alt="Logo" class="logo"></a>
-        <ul>
-            <li><a href="../services" class="btn-header">Услуги</a></li>
-            <li><a href="../about" class="btn-header">О нас</a></li>
-            <li><a href="../news" class="btn-header">Новости</a></li>
-            <li><a href="../contacts" class="btn-header">Контакты</a></li>
-            <li><a href="../dashboard" class="btn-header">Личный кабинет</a></li>
-        </ul>
-        <a href="/cart"><svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" width="1em" height="1em" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z" />
-            </svg></a>
-    </div>
+    <?
+    require_once("../components/header.php");
+    ?>
 
     <!-- Блоки новостей -->
-        <div class="news-bg" style="
+    <div class="news-bg" style="
         margin-top: 16px;
     background-image: url('../static/water-background 1.png');
     top: -16px;
     position: relative;
     background-size: cover;
 ">
-<hr><br>
-    <?
-    $query = "SELECT * FROM news ORDER BY date_added DESC";
+        <hr><br>
+        <?
+        $query = "SELECT * FROM news ORDER BY date_added DESC";
 
-    $result = $db->query($query);
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<div class='news-block' style='
+        $result = $db->query($query);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='news-block' style='
             border-radius: 15px;
             background-color:#ffffffd9;
             padding: 1rem;
@@ -111,21 +103,21 @@ require_once("../static/config.php");
             align-content: center;
             flex-direction: row;
             align-items: center;'>";
-            if ($row['photo_url'] != 'нет фото') {
-                echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'>";
-            } else {
-                echo "<div class='news_img'><p>Фото отсутствует</p></div>";
-            }
+                if ($row['photo_url'] != 'нет фото') {
+                    echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'>";
+                } else {
+                    echo "<div class='news_img'><p>Фото отсутствует</p></div>";
+                }
 
-            echo "<div class='text_next_photo'>";
-            echo "<h2>" . $row['title'] . "</h2>";
-            echo "<p>" . $row['content'] . "</p>";
-            echo "</div> <br> </div>";
-            echo "<p style='display: flex;margin-right: 2rem;justify-content: flex-end;'>Дата добавления: " . $row['date_added'] . "</p>";
-            echo "<hr>";
-        }
-    } else {
-        echo "<p style='
+                echo "<div class='text_next_photo'>";
+                echo "<h2>" . $row['title'] . "</h2>";
+                echo "<p>" . $row['content'] . "</p>";
+                echo "</div> <br> </div>";
+                echo "<p style='display: flex;margin-right: 2rem;justify-content: flex-end;'>Дата добавления: " . $row['date_added'] . "</p>";
+                echo "<hr>";
+            }
+        } else {
+            echo "<p style='
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,10 +127,10 @@ require_once("../static/config.php");
             
             Нет новостей
             </p>";
-    }
-    $db->close();
-    ?>
-</div>
+        }
+        $db->close();
+        ?>
+    </div>
 
 
     <!-- Футер -->

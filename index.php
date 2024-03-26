@@ -63,25 +63,11 @@ include("static/config.php");
     <div class="preloader">
         <div class="loader"></div>
     </div>
-
-    <!-- Header -->
-    <div class="header">
-        <a href="/"><img src="../static/logo.png" alt="Logo" class="logo"></a>
-        <ul>
-            <li><a href="../services" class="btn-header">Услуги</a></li>
-            <li><a href="../about" class="btn-header">О нас</a></li>
-            <li><a href="../news" class="btn-header">Новости</a></li>
-            <li><a href="../contacts" class="btn-header">Контакты</a></li>
-            <li><a href="../dashboard" class="btn-header">Личный кабинет</a></li>
-        </ul>
-        <a href="/cart">
-            <svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" width="1em" height="1em" viewBox="0 0 24 24" style="height: 5rem; width: 5rem;">
-                <path fill="currentColor" d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z" />
-            </svg>
-        </a>
-    </div>
+    <?
+    require_once("./components/header.php");
+    ?>
     <!-- Основной контент -->
-    <div class="main-board mb-10">
+    <div class="main-board">
         <p class="main-img-text">Мы "СТАРТ" и мы гордимся этим!</p>
         <script>
             document.querySelector(".main-img-text").addEventListener('click', () => {
@@ -199,18 +185,18 @@ include("static/config.php");
     <div class="main-news">
         <h3 style="text-align: center; margin-top: 2rem;">Новости</h3>
         <?
-    $query = "SELECT * FROM news ORDER BY date_added DESC LIMIT 3";
+        $query = "SELECT * FROM news ORDER BY date_added DESC LIMIT 3";
 
-    $result = $db->query($query);
-    echo "<div class='main-news-blocks' style='
+        $result = $db->query($query);
+        echo "<div class='main-news-blocks' style='
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
     justify-content: space-evenly;'>";
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<div class='main-news-block' style='
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='main-news-block' style='
             padding: 1rem;
             margin: 1rem;
             display: flex;
@@ -219,19 +205,19 @@ include("static/config.php");
             flex-direction: column;
             align-items: center;
             cursor: pointer;'>";
-            if ($row['photo_url'] != 'нет фото') {
-                echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'>";
-            } else {
-                echo "<div class='main-news_img'><p>Фото отсутствует</p></div>";
-            }
+                if ($row['photo_url'] != 'нет фото') {
+                    echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'>";
+                } else {
+                    echo "<div class='main-news_img'><p>Фото отсутствует</p></div>";
+                }
 
-            echo "<div class='main-text_next_photo'>";
-            echo "<h2>" . $row['title'] . "</h2>";
-            echo "<p>" . $row['content'] . "</p>";
-            echo "</div> <br> </div>";
-        }
-    } else {
-        echo "<p style='
+                echo "<div class='main-text_next_photo'>";
+                echo "<h2>" . $row['title'] . "</h2>";
+                echo "<p>" . $row['content'] . "</p>";
+                echo "</div> <br> </div>";
+            }
+        } else {
+            echo "<p style='
             display: flex;
             align-items: center;
             justify-content: center;
@@ -241,15 +227,15 @@ include("static/config.php");
             
             Нет новостей
             </p>";
-    }
-    echo "</div>";
-    ?>
+        }
+        echo "</div>";
+        ?>
     </div>
 
 
-    <h3  style="text-align: center; margin-top: 2rem;">Услуги</h3>
+    <h3 style="text-align: center; margin-top: 2rem;">Услуги</h3>
     <div class="services">
-        
+
         <form action="services_send.php" method="post">
             <img src="./services/service1.png" alt="Услуга 1">
             <h3>Индивидуальные занятия с тренером</h3>
@@ -315,12 +301,12 @@ include("static/config.php");
                     echo "<div class='main-news_img'><p>Фото отсутствует</p></div>";
                 }
 
-            echo "<div class='main-text_next_photo'>";
-            echo "<p style='font-size: large;'>" . $row['secondname'] ."  ". $row['firstname']. "</p>";
-            echo "</div> <br> </div>";
-        }
-            } else {
-                echo "<p style='
+                echo "<div class='main-text_next_photo'>";
+                echo "<p style='font-size: large;'>" . $row['secondname'] . "  " . $row['firstname'] . "</p>";
+                echo "</div> <br> </div>";
+            }
+        } else {
+            echo "<p style='
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -329,10 +315,10 @@ include("static/config.php");
                 height: 60%;'>
                 Нет тренеров
                 </p>";
-    }
-    echo "</div>";
-    $db->close();
-    ?>
+        }
+        echo "</div>";
+        $db->close();
+        ?>
     </div>
 
 
@@ -411,11 +397,9 @@ include("static/config.php");
         const elements = document.getElementsByClassName("main-news-block");
         for (const element of elements) {
             element.addEventListener('click', () => {
-            window.location.href = "/news";
-        });}
-        
-
-
+                window.location.href = "/news";
+            });
+        }
     </script>
 
     <script src="../static/script.js" defer></script>
