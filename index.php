@@ -288,7 +288,7 @@ include("static/config.php");
     <div class="trainers">
         <h3 style="text-align: center; margin-top: 2rem;">Главные тренеры</h3>
         <?
-        $query = "SELECT * FROM trainer LIMIT 4";
+        $query = "SELECT * FROM trainer";
 
         $result = $db->query($query);
         echo "<div class='main-trainers-blocks' style='
