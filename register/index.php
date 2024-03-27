@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $check_stmt->store_result();
 
     if ($check_stmt->num_rows > 0) {
-      $error = "Пользователя уже существует.";
+      $error = "Пользователь уже существует.";
     } else {
       $insert_query = "INSERT INTO users (username, passcode) VALUES (?, ?)";
       $insert_stmt = $db->prepare($insert_query);
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       header("location: ../dashboard");
       exit();
     } else {
-      $error = "Имя пользователя или пароль не подходят!";
+      $error = "Имя пользователя или пароль не подходит!";
     }
   }
 }
@@ -56,79 +56,84 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>СТАРТ | Регистрация</title>
-  <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СТАРТ | Регистрация</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
     /* Стили для прелоадера */
     .preloader {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.7);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 1;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
     }
 
     ::selection {
-      background-color: transparent;
+        background-color: transparent;
     }
 
     .preloader .loader {
-      border: 8px solid #f3f3f3;
-      border-top: 8px solid #3498db;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
     }
 
     @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
+        0% {
+            transform: rotate(0deg);
+        }
 
-      100% {
-        transform: rotate(360deg);
-      }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     .loaded .preloader {
-      opacity: 0;
+        opacity: 0;
     }
-  </style>
+    </style>
 </head>
 
 <body>
-  <div class="preloader">
-    <div class="loader"></div>
-  </div>
-  <div class="form">
-    <div class="border">
-      <h2 style="
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <div class="form">
+        <div class="border">
+            <h2 style="
             margin-top: 0;
             margin-bottom: 3rem;
             ">Регистрация</h2>
 
-      <div>
-        <form action="" method="post">
-          <input style="font-size: 1.2rem;" type="text" name="username" placeholder="Имя пользователя" /><br /><br />
-          <input style="font-size: 1.2rem;" type="password" name="password" placeholder="Пароль" /><br /><br />
-          <input style="font-size: 1.2rem; width: 90%;" type="submit" value=" Зарегистрироваться " class="submit" /><br />
-          <input type="hidden" name="register">
-        </form>
-        <div><?php echo $error; ?></div>
-        <p>Уже зарегистрированы? <a href="../login">Войти</a></p>
-        <p style="
+            <div>
+                <form action="" method="post">
+                    <input style="font-size: 1.2rem;" type="text" name="username"
+                        placeholder="Имя пользователя" /><br /><br />
+                    <input style="font-size: 1.2rem;" type="password" name="password"
+                        placeholder="Пароль" /><br /><br />
+                    <input style="font-size: 1.2rem; width: 90%;" type="submit" value=" Зарегистрироваться "
+                        class="submit" /><br />
+                    <input type="hidden" name="register">
+                </form>
+                <div>
+                    <p style="color: red;"><?php echo $error; ?></p>
+                </div>
+                <p>Уже зарегистрированы? <a href="../login">Войти</a></p>
+                <p style="
                 margin-bottom: 0;
                 padding: 0.5rem;
                 border: 1px solid;
@@ -139,17 +144,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 background-color: #193441;
                 color: #ecf4f7;
                 "><a href="../login">Назад</a></p>
-      </div>
+            </div>
 
+        </div>
     </div>
-  </div>
-  <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
-  <script>
+    <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
+    <script>
     const video = document.getElementById('bgVideo');
     video.addEventListener('loadeddata', function() {
-      document.body.classList.add('loaded');
+        document.body.classList.add('loaded');
     });
-  </script>
+    </script>
 </body>
 
 </html>

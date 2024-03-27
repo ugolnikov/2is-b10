@@ -2,63 +2,63 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>СТАРТ | Авторизация</title>
-  <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СТАРТ | Авторизация</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
     /* Стили для прелоадера */
     .preloader {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.7);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 1;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      /* Пропускать события указателя мыши через элемент */
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        /* Пропускать события указателя мыши через элемент */
     }
 
     /* Скрытие прелоадера при выделении текста */
     ::selection {
-      background-color: transparent;
-      /* Сделать выделенный текст прозрачным */
+        background-color: transparent;
+        /* Сделать выделенный текст прозрачным */
     }
 
     .preloader .loader {
-      border: 8px solid #f3f3f3;
-      /* Цвет кружка */
-      border-top: 8px solid #3498db;
-      /* Цвет кружка при загрузке */
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-      /* Анимация кручения */
+        border: 8px solid #f3f3f3;
+        /* Цвет кружка */
+        border-top: 8px solid #3498db;
+        /* Цвет кружка при загрузке */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        /* Анимация кручения */
     }
 
     @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
+        0% {
+            transform: rotate(0deg);
+        }
 
-      100% {
-        transform: rotate(360deg);
-      }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     /* Скрыть прелоадер после загрузки страницы */
     .loaded .preloader {
-      opacity: 0;
+        opacity: 0;
     }
-  </style>
+    </style>
 </head>
 
 <?php
@@ -117,25 +117,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <body style="background-image: url('../static/water.mp4');">
-  <div class="preloader">
-    <div class="loader"></div>
-  </div>
-  <div class="form">
-    <div class="border">
-      <h2 style="
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <div class="form">
+        <div class="border">
+            <h2 style="
       margin-top: 0;
       margin-bottom: 3rem;
       ">Авторизация</h2>
 
-      <div>
-        <form action="" method="post">
-          <input style="font-size: 1.2rem;" type="text" name="username" placeholder="Имя пользователя" /><br /><br />
-          <input style="font-size: 1.2rem;" type="password" name="password" placeholder="Пароль" /><br /><br />
-          <input style="font-size: 1.2rem;" type="submit" value=" Войти " class="submit" /><br />
-        </form>
-        <div><?php echo $error; ?></div>
-        <p>Нет учетной записи? <a href="../register">Зарегистрироваться</a></p>
-        <p style="
+            <div>
+                <form action="" method="post">
+                    <input style="font-size: 1.2rem;" type="text" name="username"
+                        placeholder="Имя пользователя" /><br /><br />
+                    <input style="font-size: 1.2rem;" type="password" name="password"
+                        placeholder="Пароль" /><br /><br />
+                    <input style="font-size: 1.2rem;" type="submit" value=" Войти " class="submit" /><br />
+                </form>
+                <div>
+                    <p style="color: red;"><?php echo $error; ?></p>
+                </div>
+                <p>Нет учетной записи? <a href="../register">Зарегистрироваться</a></p>
+                <p style="
         margin-bottom: 0;
         padding: 0.5rem;
         border: 1px solid;
@@ -146,18 +150,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         background-color: #193441;
         color: #ecf4f7;
         "><a href="../">Назад</a></p>
-      </div>
+            </div>
 
+        </div>
     </div>
-  </div>
 
-  <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
-  <script>
+    <video id="bgVideo" preload="true" autoplay loop muted src="../static/water.mp4"></video>
+    <script>
     const video = document.getElementById('bgVideo');
     video.addEventListener('loadeddata', function() {
-      document.body.classList.add('loaded');
+        document.body.classList.add('loaded');
     });
-  </script>
+    </script>
 </body>
 
 </html>

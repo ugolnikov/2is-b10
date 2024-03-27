@@ -76,7 +76,8 @@ a:any-link {
 }
 
 .header ul {
-  height: 100%;
+  overflow: hidden;
+  height: 120px;
   margin-top: -1px;
 }
 
@@ -503,7 +504,7 @@ body > div > div > div > p:nth-child(3) > a {
 
 .left-bar {
   margin-top: 32px;
-  width: 17%;
+  width: 30%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -560,7 +561,7 @@ body > div > div > div > p:nth-child(3) > a {
   justify-content: space-evenly;
   align-items: center;
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 2rem;
   width: 100%;
 }
 
@@ -636,14 +637,22 @@ th {
   border-radius: 10px;
   color: white !important;
   text-align: center;
-  text-wrap: nowrap;
   transition: 0.3s ease all;
+  font-size: medium;
+  text-wrap: balance;
 }
-
+.left-bar h1 {
+  font-size: larger;
+}
+.left-bar h2 {
+  font-size: large;
+}
 .admin-btn:hover {
   background-color: #002f59;
 }
-
+body > div.lk > div.left-bar > h3 {
+  margin-top: 2rem;
+}
 .navbar {
   display: none !important;
 }
@@ -651,7 +660,7 @@ th {
   display: flex !important;
 }
 @media only screen and (min-width: 359px) and (max-width: 769px),
-only screen and (orientation: portrait) {
+  only screen and (orientation: portrait) {
   .navbar {
     display: block !important;
     width: 100%;
@@ -781,11 +790,11 @@ only screen and (orientation: portrait) {
   }
   .where-is-me-2 {
     flex-direction: column;
-    width: 100%!important;
-    margin: 0!important;
+    width: 100% !important;
+    margin: 0 !important;
     font-size: larger;
-    display: block!important;
-    border-radius: 0!important;
+    display: block !important;
+    border-radius: 0 !important;
   }
   .where-is-me-2 .row {
     width: fit-content;
@@ -819,7 +828,7 @@ only screen and (orientation: portrait) {
   }
   .prizes {
     gap: 30px;
-    flex-direction: column!important;
+    flex-direction: column !important;
     flex-wrap: wrap !important;
   }
   .prize {
@@ -827,20 +836,20 @@ only screen and (orientation: portrait) {
   }
   body > div.about-flex > img {
     width: 80%;
-    margin-right: 0!important;
+    margin-right: 0 !important;
   }
   .footer .text {
     font-size: medium;
   }
-  .open-popup{
+  .open-popup {
     padding: 1rem;
   }
   .navbar-brand {
-    font-size: medium!important;
+    font-size: medium !important;
   }
 }
-@media only screen and (min-width: 769px) and (max-width: 1280px){
-  .header{
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+  .header {
     width: 100%;
   }
   .navbar {
@@ -853,11 +862,11 @@ only screen and (orientation: portrait) {
   .header {
     display: none !important;
   }
-  .blocks{
+  .blocks {
     flex-wrap: nowrap;
     width: 100%;
   }
-  .about-board{
+  .about-board {
     height: fit-content;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -905,9 +914,9 @@ only screen and (orientation: portrait) {
   }
   .prize {
     width: 35% !important;
-    height: fit-content!important;
+    height: fit-content !important;
   }
   body > div.about-flex > img {
-    margin-right: 0!important;
+    margin-right: 0 !important;
   }
 }
