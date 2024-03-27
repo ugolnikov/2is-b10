@@ -588,6 +588,7 @@ body > div > div > div > p:nth-child(3) > a {
   color: #ecf4f7;
   cursor: pointer;
   transition: 0.3s ease all;
+  text-wrap: balance;
 }
 
 .services form input:hover {
