@@ -529,8 +529,8 @@ body > div > div > div > p:nth-child(3) > a {
 
 .news_img {
   border: 1px solid darkgrey;
-  height: 150px;
-  width: 250px;
+  min-height: 150px;
+  min-width: 250px;
   display: flex;
   flex-wrap: nowrap;
   align-content: center;
