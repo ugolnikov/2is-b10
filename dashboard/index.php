@@ -1,6 +1,7 @@
 <?
-error_reporting(-1);
-require('../static/session.php');
+error_reporting(E_ALL);
+require_once('../static/config.php');
+require_once('../static/session.php');
 $user_id = $_SESSION['user_id'];
 ?>
 <html lang="ru">
@@ -32,14 +33,15 @@ $user_id = $_SESSION['user_id'];
     </div>
     <div class="right-bar">
       <h1>Добро пожаловать - <?php echo $login_session; ?></h1>
-      <?
-      $sql = mysqli_query($db, "SELECT * FROM users WHERE id = '$user_id'");
+      <?php
+      $sql = mysqli_query($db, "SELECT * FROM users WHERE id = '" . mysqli_real_escape_string($db, $user_id) . "'");
+      $row = mysqli_fetch_assoc($sql);
       ?>
       <p>ID: <?php echo $user_id; ?></p>
-      <p>ФИО: <span id="fullName"><?php echo ($user['full_name'] ? $user['full_name'] : "не задано"); ?></span></p>
-      <p>Дата рождения: <span id="dob"><?php echo ($user['date_of_birth'] ? $user['date_of_birth'] : "не задано"); ?></span></p>
-      <p>Телефон: <span id="phone"><?php echo ($user['phone'] ? $user['phone'] : "не задано"); ?></span> </p>
-      <p>Email: <span id="email"><?php echo ($user['email'] ? $user['email'] : "не задано"); ?></span></p>
+      <p>ФИО: <span id="fullName"><?php echo ($row['full_name'] ? $row['full_name'] : "не задано"); ?></span></p>
+      <p>Дата рождения: <span id="dob"><?php echo ($row['date_of_birth'] ? $row['date_of_birth'] : "не задано"); ?></span></p>
+      <p>Телефон: <span id="phone"><?php echo ($row['phone'] ? $row['phone'] : "не задано"); ?></span> </p>
+      <p>Email: <span id="email"><?php echo ($row['email'] ? $row['email'] : "не задано"); ?></span></p>
 
       <div class="red-block">
         <h3>Если у вас в полях стоит "не задано", то необходимо обратиться к модераторам через форму обратной связи.</h3>
