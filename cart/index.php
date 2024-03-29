@@ -130,7 +130,7 @@ require('../static/config.php');
             <input type='hidden' name='asd'>
             <button type='submit'>Очистить корзину</button>
             </form>";
-            echo "<p>Общая стоимость:" . $total_price . "₽</p>";
+            echo "<p>Общая стоимость: <b>" . $total_price . "₽</b></p>";
             echo "<form action='order.php' method='post'>";
             echo "<input type='text' name='phone'
             id='phone' placeholder='Номер телефона' required>";
@@ -148,7 +148,7 @@ require('../static/config.php');
 
 
     <!-- Футер -->
-    <div class="footer" style="position:fixed; left:0px; bottom:0px; height:150px; width:100%; margin-top: 150px;">
+    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: 250px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>

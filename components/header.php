@@ -2,7 +2,7 @@
 <? echo "
 <nav class='navbar navbar-light bg-light sticky-top'>
     <div class='container-fluid'>
-        <a class='navbar-brand' href='/'><img src='../static/logo.png' alt='logo' class='logo'>СТАРТ | Школа плавания</a>
+        <a class='navbar-brand' href='/'><img src='../static/logo.png' alt='logo' class='logo'> | Школа плавания</a>
         <button class='navbar-toggler' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasDarkNavbar' aria-controls='offcanvasDarkNavbar' aria-label='Меню'>
             <span class='navbar-toggler-icon'></span>
         </button>

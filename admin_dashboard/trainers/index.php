@@ -31,7 +31,7 @@ require('../../static/session.php');
 
     <div class="lk">
         <div class="left-bar">
-            <h1 style="text-align: center;">Добавление новостей</h1>
+            <h1 style="text-align: center;">Тренеры</h1>
             <form action="" method="post" style="display: flex; flex-wrap: nowrap; flex-direction: column; align-items: center; justify-content: center; align-content: center;">
                 <input type="text" id="firstname" name="firstname" placeholder="Имя"><br>
                 <input type="text" id="secondname" name="secondname" placeholder="Фамилия"><br>

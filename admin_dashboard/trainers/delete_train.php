@@ -17,5 +17,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['train_id'])) {
     }
 
     $db->close();
-    header("Location: ../train_admin");
+    header("Location: ./");
 }

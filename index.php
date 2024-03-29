@@ -211,13 +211,13 @@ include("static/config.php");
             align-items: center;
             cursor: pointer;'>";
                 if ($row['photo_url'] != 'нет фото') {
-                    echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='news_img'><br>";
+                    echo "<img src=' " . $row['photo_url'] . "' alt='Photo' class='main-news_img'><br>";
                 } else {
                     echo "<div class='main-news_img'><p>Фото отсутствует</p></div><br>";
                 }
 
                 echo "<div class='main-text_next_photo'>";
-                echo "<h4>" . $row['title'] . "</h4>";
+                echo "<p>" . $row['title'] . "</p>";
                 echo "</div> <br> </div>";
             }
         } else {

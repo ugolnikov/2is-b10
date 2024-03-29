@@ -94,7 +94,7 @@ require_once("../static/config.php");
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='news-block' style='
-            border-radius: 15px;
+            border-radius: 7px;
             background-color:#ffffffd9;
             padding: 1rem;
             margin: 1rem;
@@ -112,9 +112,10 @@ require_once("../static/config.php");
                 echo "<div class='text_next_photo'>";
                 echo "<h2>" . $row['title'] . "</h2>";
                 echo "<p>" . $row['content'] . "</p>";
-                echo "</div> <br> </div>";
-                echo "<p style='display: flex;margin-right: 2rem;justify-content: flex-end;'>Дата добавления: " . $row['date_added'] . "</p>";
-                echo "<hr>";
+                echo "</div> <br> ";
+                echo "<p style='text-align: right;
+                width: 90%;'>Дата добавления: " . $row['date_added'] . "</p>";
+                echo "</div><hr>";
             }
         } else {
             echo "<p style='
