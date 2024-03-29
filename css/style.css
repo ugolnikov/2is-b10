@@ -677,7 +677,7 @@ body > div.lk > div.left-bar > h3 {
 .header {
   display: flex !important;
 }
-@media only screen and (min-width: 359px) and (max-width: 769px),
+@media only screen and (min-width: 319px) and (max-width: 769px),
   only screen and (orientation: portrait) {
   .navbar {
     display: block !important;
