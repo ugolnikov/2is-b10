@@ -251,7 +251,7 @@ include("static/config.php");
             <input type="hidden" name="price" value="3000">
             <input style="width: 100%!important;" type="submit" value="Добавить в корзину">
         </form>
-        <form action="services_send.php" method="post">
+        <form action="/services" method="post">
             <img src="./services/service2.jpg" alt="Услуга 2">
             <h3>Групповые тренировки по дисциплинам</h3>
             <p>Разделение учеников на группы в соответствии с их уровнем подготовки и тренировочными целями (например,
@@ -263,7 +263,7 @@ include("static/config.php");
             <input type="hidden" name="price" value="1500">
             <input style="width: 100%!important;" type="submit" value="Добавить в корзину">
         </form>
-        <form action="services_send.php" method="post">
+        <form action="/services" method="post">
             <img src="./services/service3.jpg" alt="Услуга 3">
             <h3>Подготовка к соревнованиям</h3>
             <p>Обучение технике, тактике и стратегии для участия в соревнованиях на региональном, национальном и
