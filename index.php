@@ -240,7 +240,7 @@ include("static/config.php");
     <h3 style="text-align: center; margin-top: 2rem;">Услуги</h3>
     <div class="services">
 
-        <form action="services_send.php" method="post">
+        <form action="/services" method="post">
             <img src="./services/service1.png" alt="Услуга 1">
             <h3>Индивидуальные занятия с тренером</h3>
             <p>Персональные тренировки, нацеленные на развитие индивидуальных навыков плавания и подготовку к
