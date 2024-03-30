@@ -28,8 +28,8 @@ $user_id = $_SESSION['user_id'];
 
   <div class="lk">
     <div class="left-bar">
-      <a href="" class="admin-btn">Мои данные</a>
-      <h3><a href="logout.php" style="text-decoration: underline;" class="admin-btn">Выйти из аккаунта</a></h3>
+      <a href="" class="admin-btn" style="text-decoration: underline;">Мои данные</a>
+      <h3><a href="logout.php" class="admin-btn">Выйти из аккаунта</a></h3>
     </div>
     <div class="right-bar">
       <h1>Добро пожаловать - <?php echo $login_session; ?></h1>
