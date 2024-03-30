@@ -33,7 +33,7 @@ require('../static/session.php');
             <a href="./feedback/" class="admin-btn">Обращения</a>
             <a href="./trainers" class="admin-btn">Тренеры</a>
 
-            <h3><a href="logout.php" style="text-decoration: underline;" class="admin-btn">Выйти из аккаунта</a></h3>
+            <h3><a href="logout.php" class="admin-btn">Выйти из аккаунта</a></h3>
         </div>
         <div class="right-bar">
             <p style='display: flex; align-items: center; justify-content: center; align-content: center; flex-wrap: nowrap; height: 60%;'>
