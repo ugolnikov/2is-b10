@@ -77,7 +77,7 @@ $user_id = $_SESSION['user_id'];
   </div>
 
   <div class="popup__bg">
-    <form class="popup" action="./feedback_send.php" method="post">
+    <form class="popup" action="/feedback_send.php" method="post">
       <img src="/static/close.svg" class="close-popup" alt="close">
       <label>
         <input type="text" name="name" id="name">
