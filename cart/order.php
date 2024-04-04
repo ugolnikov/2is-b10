@@ -78,5 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ?>
 </div>
 </body>
+<?
+header("Refresh:0; url=../dashboard");
+?>
 
 </html>
