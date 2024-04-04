@@ -29,11 +29,6 @@ include("static/config.php");
             transition: opacity 0.3s ease;
             pointer-events: none;
         }
-
-        ::selection {
-            background-color: transparent;
-        }
-
         .preloader .loader {
             border: 8px solid #f3f3f3;
             border-top: 8px solid #3498db;
@@ -402,6 +397,7 @@ include("static/config.php");
         window.addEventListener('load', function() {
             // setTimeout(function() {
             document.body.classList.add('loaded');
+            document.querySelector(".preloader").remove();
             // }, 500); 
         });
         const elements = document.getElementsByClassName("main-news-block");

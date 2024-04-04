@@ -92,7 +92,7 @@
     align-items: center;
     align-content: center;
     justify-content: center;">
-        <img src="../static/smiley-male-swimmer-inviting-photographer-to-swim_23-2148326742.avif" alt="About IMG" style="margin-right: 2rem; border-radius: 10px; box-shadow: 2.5px 2.5px rgb(227 227 227);">
+        <img src="../static/photo_about.avif" alt="About IMG" style="margin-right: 2rem; width: 30%; border-radius: 10px; box-shadow: 2.5px 2.5px rgb(227 227 227);">
         <div class="about-text" style="line-height: 30px; text-align: justify;">
             Добро пожаловать в школу плавания олимпийского резерва "СТАРТ"! Мы являемся ведущим центром подготовки юных спортсменов к достижению высших результатов в плавании.
             <br>
@@ -118,23 +118,10 @@
     </div>
 
 
-    <div class="prizes" style="    display: flex;
-    margin: auto 2rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    align-content: center;
-    flex-wrap: nowrap;
-    margin-top: 2rem;">
-        <img src="../static/prize (1).jpg" alt="Prize" class="prize">
-        <img src="../static/prize (1).webp" alt="Prize" class="prize">
-        <img src="../static/prize (2).jpg" alt="Prize" class="prize">
-    </div>
-
 
 
     <!-- Футер -->
-    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: 100px;">
+    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: 150px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>

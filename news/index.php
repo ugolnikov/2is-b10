@@ -32,12 +32,6 @@ require_once("../static/config.php");
             /* Пропускать события указателя мыши через элемент */
         }
 
-        /* Скрытие прелоадера при выделении текста */
-        ::selection {
-            background-color: transparent;
-            /* Сделать выделенный текст прозрачным */
-        }
-
         .preloader .loader {
             border: 8px solid #f3f3f3;
             /* Цвет кружка */
@@ -109,7 +103,7 @@ require_once("../static/config.php");
                     echo "<div class='news_img'><p>Фото отсутствует</p></div>";
                 }
 
-                echo "<div class='text_next_photo'>";
+                echo "<div class='text_next_photo' style='width: 180%;'>";
                 echo "<h2>" . $row['title'] . "</h2>";
                 echo "<p>" . $row['content'] . "</p>";
                 echo "</div> <br> ";
@@ -135,7 +129,7 @@ require_once("../static/config.php");
 
 
     <!-- Футер -->
-    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: -24px;">
+    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: -32px;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>

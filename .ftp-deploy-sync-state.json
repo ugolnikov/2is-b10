@@ -1,13 +1,13 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1711578580065,
+    "generatedTime": 1712228975088,
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state.json",
-            "size": 12980,
-            "hash": "7fda21ae1c4b1c4b9e9aa5ded32fde7ac0041347f470bd879d25b719e5b3287f"
+            "size": 13272,
+            "hash": "178179ffb159ebec998214fd8d811bf2989590520444a3fc5a30021a0fa44cf8"
         },
         {
             "type": "file",
@@ -58,8 +58,8 @@
         {
             "type": "file",
             "name": "index.php",
-            "size": 22592,
-            "hash": "049109d0356d45082e8b3df9f294260b3da893bb5af8a702a51b1ce6dc2c2679"
+            "size": 22308,
+            "hash": "4b4b16cd73e019004dca56798a4d0fbcb53c314779c02352379249888c068ad8"
         },
         {
             "type": "folder",
@@ -100,8 +100,8 @@
         {
             "type": "file",
             "name": "admin_dashboard/index.php",
-            "size": 5550,
-            "hash": "856a3922fd766e1822a7a72cb8a92e75f66672501e01a1d8758db446149a8d34"
+            "size": 5373,
+            "hash": "076ac12fdbcdd3e37613ad3fa30a066dbec9667c7d99e9f833e264957466511b"
         },
         {
             "type": "file",
@@ -111,21 +111,15 @@
         },
         {
             "type": "folder",
-            "name": "admin_dashboard/news_admin"
-        },
-        {
-            "type": "folder",
             "name": "admin_dashboard/trainers"
         },
         {
             "type": "folder",
-            "name": "admin_dashboard/users_data"
+            "name": "admin_dashboard/news_admin"
         },
         {
-            "type": "file",
-            "name": "cart/index.php",
-            "size": 8836,
-            "hash": "6e7c8e8c8003c80ddcf5fe90a12329a489b30c91cad71e5dc1afe4ade26f6b19"
+            "type": "folder",
+            "name": "admin_dashboard/users_data"
         },
         {
             "type": "file",
@@ -135,27 +129,39 @@
         },
         {
             "type": "file",
+            "name": "cart/index.php",
+            "size": 8828,
+            "hash": "4b9da8cf8d187337dcf6963cb4c07864ae1e3982b570de787967cf387a9edcec"
+        },
+        {
+            "type": "file",
             "name": "cart/order.php",
-            "size": 1706,
-            "hash": "46b4ffce845e7467281c61eea25bbe0bb3c82f228d68ff27f0e6ff3099d19f53"
+            "size": 3325,
+            "hash": "968e4768fde1a0f642dd0165372a350cd40f95b277d8c87125f211cfa70b89f0"
         },
         {
             "type": "file",
             "name": "components/header.php",
-            "size": 2998,
-            "hash": "03bef45777c33ef7f6792646e8aa80588b542ef173507109d6732115ef7122cc"
+            "size": 2988,
+            "hash": "1d81d0c4ccfcee10ef3161e646c1bd6b0ba03f331fa454fc72eb8d38a652c2cb"
         },
         {
             "type": "file",
             "name": "contacts/index.php",
-            "size": 8541,
-            "hash": "1b85821c40d46157a7c1c52b66d7487693a2cb67bee203647a461fe7699737fa"
+            "size": 8540,
+            "hash": "fc605cd1c64b24b7bfe051c7028fedf3d3f2d893332b49a8f029290e75da5ba0"
         },
         {
             "type": "file",
             "name": "css/style.css",
-            "size": 14969,
-            "hash": "585f74826bb16f7eaf7f482e7ad0a8b2873843b88e1ac489c44ff8ac29e5517b"
+            "size": 16043,
+            "hash": "1135cf07b19478934a6740aebcc9bacc87dd5d28562a8734fee3dc82ca22e6a1"
+        },
+        {
+            "type": "file",
+            "name": "dashboard/index.php",
+            "size": 5551,
+            "hash": "27331337b69fd8a6a6e84141eaa13926653df3b8fa52b8ba6019d9bbc28fd51a"
         },
         {
             "type": "file",
@@ -171,12 +177,6 @@
         },
         {
             "type": "file",
-            "name": "dashboard/index.php",
-            "size": 5432,
-            "hash": "c0e83d6c1591ea80efd038ac703ffbe3d59530f8a6e2eede44fff0e5ed70cc2a"
-        },
-        {
-            "type": "file",
             "name": "login/index.php",
             "size": 4948,
             "hash": "8faa32a9fb9d924f334ce413008de8e6056f87740469562c5d6fc901c1b90b91"
@@ -184,8 +184,8 @@
         {
             "type": "file",
             "name": "news/index.php",
-            "size": 8200,
-            "hash": "97b3dccca2008b49a4a13fd76ac6548717a78b007658a79829a8aa1df2dd219a"
+            "size": 8186,
+            "hash": "e340d1e237ca108c40a2008dce66be4066807df7b26e3cd1542c50c2386f2581"
         },
         {
             "type": "file",
@@ -237,27 +237,27 @@
         },
         {
             "type": "file",
-            "name": "static/config.php",
-            "size": 337,
-            "hash": "e5f398333dd72acb2b55ee116bed3f39ec26277074e6675be743c4755c39dc08"
-        },
-        {
-            "type": "file",
             "name": "static/close.svg",
             "size": 334,
             "hash": "3e68a49f035c9fee9d3ec68dc83c756fac945717527dc5a91d2f8c204f134cbf"
         },
         {
             "type": "file",
-            "name": "static/logo.png",
-            "size": 2937,
-            "hash": "7642911317d4519e5bb17876b5566fe01f1b06f8c7df09cfe907c15642d8707c"
+            "name": "static/config.php",
+            "size": 337,
+            "hash": "e5f398333dd72acb2b55ee116bed3f39ec26277074e6675be743c4755c39dc08"
         },
         {
             "type": "file",
             "name": "static/favicon.ico",
             "size": 235774,
             "hash": "3527c56abc1daff6ad14e797cc5bd14a41360cdcfd2440a29dfa646e9496b117"
+        },
+        {
+            "type": "file",
+            "name": "static/logo.png",
+            "size": 2937,
+            "hash": "7642911317d4519e5bb17876b5566fe01f1b06f8c7df09cfe907c15642d8707c"
         },
         {
             "type": "file",
@@ -303,15 +303,15 @@
         },
         {
             "type": "file",
-            "name": "static/session.php",
-            "size": 1046,
-            "hash": "20252b0519a576ce54f79bad7c5600d61e4e8c8e1e7ae9580bd62ccf5ab2d7cd"
-        },
-        {
-            "type": "file",
             "name": "static/script.js",
             "size": 705,
             "hash": "75df5b46831d2ecdec1ed9db80ad011e51762c277f5b00f8f372054729a99e58"
+        },
+        {
+            "type": "file",
+            "name": "static/session.php",
+            "size": 1046,
+            "hash": "20252b0519a576ce54f79bad7c5600d61e4e8c8e1e7ae9580bd62ccf5ab2d7cd"
         },
         {
             "type": "file",
@@ -345,33 +345,9 @@
         },
         {
             "type": "file",
-            "name": "admin_dashboard/news_admin/delete_news.php",
-            "size": 486,
-            "hash": "f06bae9fb9ce273b5d83721fec9110ac9f4105a6c8eec3578c550c8f1f47a9aa"
-        },
-        {
-            "type": "file",
-            "name": "admin_dashboard/news_admin/index.php",
-            "size": 5455,
-            "hash": "54a07e8b5cdb2280a8a1ab7de4e29ceff49f1ccd082038ea9e69338f5f598adc"
-        },
-        {
-            "type": "file",
-            "name": "admin_dashboard/news_admin/edit_news.php",
-            "size": 1212,
-            "hash": "216eb899a9d1de8777d8419dbc29b761c177739b87ed245316df64ce2f2a3d51"
-        },
-        {
-            "type": "file",
-            "name": "admin_dashboard/news_admin/update_news.php",
-            "size": 826,
-            "hash": "903fd4febd16091e5bc1773431dd300a403371796d808def173fd56a1ce6fd3b"
-        },
-        {
-            "type": "file",
             "name": "admin_dashboard/trainers/delete_train.php",
-            "size": 490,
-            "hash": "25e6555416ce6e975eadf664b0127080ae2d03597ef362845b57665ab9d6c060"
+            "size": 478,
+            "hash": "d09f1f59e2294bb0352954310f7b01bd756656f12b252096d15a4a48860adf21"
         },
         {
             "type": "file",
@@ -382,14 +358,38 @@
         {
             "type": "file",
             "name": "admin_dashboard/trainers/index.php",
-            "size": 5396,
-            "hash": "e26ce015d41506a532c00699c0b335ddb09f86626bc6b97e9d78905a373822ad"
+            "size": 5373,
+            "hash": "3756c5f70e9fe83e77a6642dbf50adb8c02e5d1459e82cac846caddaba56f760"
         },
         {
             "type": "file",
             "name": "admin_dashboard/trainers/update_train.php",
             "size": 857,
             "hash": "41cedaf5ec3373fc9bb172490e9a932783a86a47f5e084f674e926c59b550429"
+        },
+        {
+            "type": "file",
+            "name": "admin_dashboard/news_admin/delete_news.php",
+            "size": 486,
+            "hash": "f06bae9fb9ce273b5d83721fec9110ac9f4105a6c8eec3578c550c8f1f47a9aa"
+        },
+        {
+            "type": "file",
+            "name": "admin_dashboard/news_admin/edit_news.php",
+            "size": 1212,
+            "hash": "216eb899a9d1de8777d8419dbc29b761c177739b87ed245316df64ce2f2a3d51"
+        },
+        {
+            "type": "file",
+            "name": "admin_dashboard/news_admin/index.php",
+            "size": 5455,
+            "hash": "54a07e8b5cdb2280a8a1ab7de4e29ceff49f1ccd082038ea9e69338f5f598adc"
+        },
+        {
+            "type": "file",
+            "name": "admin_dashboard/news_admin/update_news.php",
+            "size": 826,
+            "hash": "903fd4febd16091e5bc1773431dd300a403371796d808def173fd56a1ce6fd3b"
         },
         {
             "type": "file",

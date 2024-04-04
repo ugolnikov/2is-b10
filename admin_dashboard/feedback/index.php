@@ -36,7 +36,7 @@
             ?>
             <h2><a href="../" style="text-decoration: underline;">Назад</a></h2>
         </div>
-        <div class="right-bar">
+        <div class="right-bar" style="justify-content: flex-start!important;">
             <!-- Блоки заявок -->
             <?php
             require('../../static/session.php');

@@ -51,13 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             pointer-events: none;
             /* Пропускать события указателя мыши через элемент */
         }
-
-        /* Скрытие прелоадера при выделении текста */
-        ::selection {
-            background-color: transparent;
-            /* Сделать выделенный текст прозрачным */
-        }
-
         .preloader .loader {
             border: 8px solid #f3f3f3;
             /* Цвет кружка */

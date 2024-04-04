@@ -34,11 +34,6 @@ require('../static/config.php');
             transition: opacity 0.3s ease;
             pointer-events: none;
         }
-
-        ::selection {
-            background-color: transparent;
-        }
-
         .preloader .loader {
             border: 8px solid #f3f3f3;
             border-top: 8px solid #3498db;
@@ -84,7 +79,9 @@ require('../static/config.php');
         $result = $db->query($sql);
 
         if ($result->num_rows > 0) {
-            echo "<h2>Содержимое корзины:</h2>";
+            echo "<h2 style='
+    margin-bottom: 20px;
+'>Содержимое корзины:</h2>";
             echo "<table border='1' cellspacing='0'>";
             echo "<tr><th>Название услуги</th><th>Цена</th></tr>";
             while ($row = $result->fetch_assoc()) {
@@ -148,7 +145,7 @@ require('../static/config.php');
 
 
     <!-- Футер -->
-    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%; margin-top: 250px;">
+    <div class="footer" style="left:0px; bottom:0px; height:150px; width:100%;">
         <div class="text">
             Созданно: <br>Угольников Д. О. <b>2-ИС</b>
         </div>
