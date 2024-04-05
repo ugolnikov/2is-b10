@@ -26,7 +26,7 @@
             opacity: 1;
             transition: opacity 0.3s ease;
             pointer-events: none;
-           
+           }
 
         .preloader .loader {
             border: 8px solid #f3f3f3;
