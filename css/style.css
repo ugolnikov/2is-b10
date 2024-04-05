@@ -861,6 +861,10 @@ body > div.lk > div.left-bar > h3 {
     flex-direction: column !important;
     gap: 10px;
   }
+  .about-flex img{
+    max-width: 90%!important;
+    min-width: 90%!important;
+    margin: auto!important;
   .about-text {
     font-size: larger;
     line-height: 40px !important;
