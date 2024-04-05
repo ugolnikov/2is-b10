@@ -26,14 +26,7 @@
             opacity: 1;
             transition: opacity 0.3s ease;
             pointer-events: none;
-            /* Пропускать события указателя мыши через элемент */
-        }
-
-        /* Скрытие прелоадера при выделении текста */
-        ::selection {
-            background-color: transparent;
-            /* Сделать выделенный текст прозрачным */
-        }
+           
 
         .preloader .loader {
             border: 8px solid #f3f3f3;
